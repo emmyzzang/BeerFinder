@@ -1,0 +1,23 @@
+{
+  "name": "beerfinder",
+  "version": "1.0.0",
+  "description": "Find the ocarina of beer!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masteremmy/BeerFinder.git"
+  },
+  "keywords": [
+    "beer"
+  ],
+  "author": "Emmy, Gildon, Brie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masteremmy/BeerFinder/issues"
+  },
+  "homepage": "https://github.com/masteremmy/BeerFinder#readme"
+}
