@@ -7,3 +7,9 @@ exports.signup = function(req, res) {
     res.sendFile(path.join(__dirname, '../public/signup.html'));
  
 }
+
+exports.signin = function(req, res) {
+ 
+    res.sendFile(path.join(__dirname, '../public/signin.html'));
+ 
+}
