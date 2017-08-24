@@ -1,0 +1,9 @@
+var path = require('path');
+
+var exports = module.exports = {}
+ 
+exports.signup = function(req, res) {
+ 
+    res.sendFile(path.join(__dirname, '../public/signup.html'));
+ 
+}

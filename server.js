@@ -41,10 +41,10 @@ app.use(passport.initialize());
  
 app.use(passport.session()); // persistent login sessions
 
-// Getting an error that says require is not a function, this is because it
-// has been exported as a variable not a function
+// Getting an error that says require is not a function
 // require("./app/routes/apiRoutes")(app);
 // require("./app/routes/htmlRoutes")(app);
+var authRoute = require('./app/routes/auth.js')(app);
 // ================================================================================
 
 //Models
