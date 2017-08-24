@@ -13,3 +13,9 @@ exports.signin = function(req, res) {
 exports.dashboard = function(req, res) {
     res.sendFile(path.join(__dirname, '../public/dashboard.html'));
 }
+
+exports.logout = function(req, res) {
+    req.session.destroy(function(err) {
+        res.redirect('/');
+    });
+}
