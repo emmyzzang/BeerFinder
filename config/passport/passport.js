@@ -12,7 +12,7 @@ module.exports = function(passport, user) {
 	    },
 	    function(req, email, password, done) {
 	    	var generateHash = function(passsword) {
-	    		return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+	    		return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
 	    	};
 
 			User.findOne({
@@ -44,5 +44,22 @@ module.exports = function(passport, user) {
 			});
 	    }
 	));
+
+	//serialize
+	passport.serializeUser(function(user, done) {
+	    done(null, user.id); 
+	});
+
+	// deserialize user 
+	passport.deserializeUser(function(id, done) {
+	 
+	    User.findById(id).then(function(user) {
+	        if (user) {
+	            done(null, user.get());
+	        } else {
+	            done(user.errors, null);
+	        }
+	    });
+	});
 }
 

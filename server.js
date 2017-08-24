@@ -35,29 +35,15 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 
 // For Passport
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
- 
+app.use(session({ 
+	secret: 'keyboard cat',
+	resave: true, 
+	saveUninitialized:true
+})); // session secret
 app.use(passport.initialize());
- 
 app.use(passport.session()); // persistent login sessions
 
-// Getting an error that says require is not a function
-// require("./app/routes/apiRoutes")(app);
-// require("./app/routes/htmlRoutes")(app);
-var authRoute = require('./app/routes/auth.js')(app);
 // ================================================================================
-
-//Models
-var models = require("./models");
- 
-//Sync Database
-models.sequelize.sync().then(function() {
-    console.log('Nice! Database looks fine')
-}).catch(function(err) {
-    console.log(err, "Something went wrong with the Database Update!")
-});
-
-
 
 // ROUTER
 // The below points our server to a series of "route" files.
@@ -67,7 +53,24 @@ app.get('/', function(req, res) {
     res.send('Welcome to Passport with Sequelize');
 });
 
+//Models
+var models = require("./models");
 
+//Routes
+// Getting an error that says require is not a function
+// require("./app/routes/apiRoutes")(app);
+// require("./app/routes/htmlRoutes")(app);
+var authRoute = require('./app/routes/auth.js')(app, passport);
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, models.user);
+
+//Sync Database
+models.sequelize.sync().then(function() {
+    console.log('Nice! Database looks fine')
+}).catch(function(err) {
+    console.log(err, "Something went wrong with the Database Update!")
+});
 
 // ==============================================================================
 // LISTENER
