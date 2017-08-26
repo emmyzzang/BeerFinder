@@ -1,0 +1,22 @@
+{
+  "development": {
+    "username": "root",
+    "password": "certifiedG48*",
+    "database": "beer_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "",
+    "password": null,
+    "database": "",
+    "host": "",
+    "dialect": "mysql"
+  },
+  "production": {
+    "host": "l6slz5o3eduzatkw.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "kd8bhf0qlpqtxc17",
+    "password": "ab8a1rbz9uksoop7",
+    "port": 3306
+  }
+}
