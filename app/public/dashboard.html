@@ -8,7 +8,45 @@
 <body>
     <h2>Dashboard</h2>
     <h5>Hurray! you are logged in.</h5>
+    <form id="dashboard" name="dashboard" method="post" action="/signup">
+	
+		<!-- Take Info from this form and move to user's personal profile list -->
+
+        <h3><label for="name">Beer Name</label><h3>
+        <input class="text" name="name" type="text" /> 
+
+        <h3>Your Rating</strong></h3>
+		<select data-placeholder="" class="chosen-select" id="userRating">
+		<option value=""></option>
+		<option value="1">1 (Ick!)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Wow!)</option>
+	</select>
+
+        <input class="btn" type="submit" value="Submit!" />
+    </form>
  
+ 
+ <br> 
+ <br> 
+
+ <div class="">
+		<a href="/survey"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> Go to List</button></a>
+	</div>
+
 </body>
  
 </html>
+
+<!-- 
+	<script type="text/javascript">
+
+// Write this up soon
+$("#submit").on("click", function() {
+
+
+	</script>
+
+ -->
