@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     .myLink {display: none}
@@ -14,19 +16,22 @@
 </head>
 
 <body class="w3-light-grey">
-      <h2>Dashboard</h2>
-      <h5>Hurray! you are logged in.</h5>
     <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
       <img class="w3-image" src="beer.jpg" alt="London" width="1500" height="700">
       <div class="w3-display-middle" style="width:65%">
     <div class="w3-container">
+
       <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+        <h2>Dashboard</h2>
+        <h5>Hurray! you are logged in.</h5>
     <form id="dashboard" name="dashboard" method="post" action="/signup">
 
 		<!-- Take Info from this form and move to user's personal profile list -->
 
         <h3><label for="name">Beer Name</label><h3>
         <input class="text" name="name" type="text" />
+        <h3><label for "type">What Type?</label></h3>
+        <input class="text" type="type" type="text" placeholder="IPA"/>
 
         <h3>Your Rating</strong></h3>
 		<select data-placeholder="" class="chosen-select" id="userRating">

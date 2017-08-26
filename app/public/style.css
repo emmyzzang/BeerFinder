@@ -70,3 +70,9 @@ input[name=email] {
   box-sizing: border-box;
   font-size: 14px;
 }
+.h2 {
+  font-color:white;
+}
+.h5{
+  font-color: white;
+}
