@@ -17,8 +17,8 @@
 
 <body class="w3-light-grey">
     <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
-      <img class="w3-image" src="beer.jpg" alt="London" width="1500" height="700">
-      <div class="w3-display-middle" style="width:65%">
+    </header>
+      <div class="w3-display-middle" style=" margin-top: 20em;">
     <div class="w3-container">
 
       <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
@@ -30,9 +30,18 @@
 
         <h3><label for="name">Beer Name</label><h3>
         <input class="text" name="name" type="text" />
-        <h3><label for "type">What Type?</label></h3>
-        <input class="text" type="type" type="text" placeholder="IPA"/>
-
+        <h3><label for="type">What Type?</label></h3>
+        <input class="text"name="type" type="text" placeholder="IPA"/>
+        <h3><label for "clarity">Clarity?</label></h3>
+        <input class="text" name="clarity" type="text" placeholder="Foggy"/>
+        <h3><label for "Hue">Hue?</label></h3>
+        <input class="text" name="hue" type="text" placeholder="Golden"/>
+        <h3><label for "Bitterness Units">International Bitterness Units?</label></h3>
+        <input class="text" name="biterness unites" type="text" placeholder="60"/>
+        <h3><label for "Bubble Size">Bubble Size?</label></h3>
+        <input class="text" name="bubble size" type="text" placeholder="Large"/>
+        <h3><label for "Head">Head?</label></h3>
+        <input class="text" name="head" type="text" placeholder="Firm Head"/>
         <h3>Your Rating</strong></h3>
 		<select data-placeholder="" class="chosen-select" id="userRating">
 		<option value=""></option>
@@ -45,15 +54,41 @@
 
         <input class="btn" type="submit" value="Submit!" />
     </form>
+    <div class="w3-container">
 
+            <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+                <div class="w3-container">
+                    <p class="w3-large"><b>Past Beers!</b></p>
+                </div>
+                <div class="container"></div>
+                <div class="panel-body">
+                    <table class="table table-hover" style="width:100%" id='beers-table'>
+                        <thead>
+                            <tr>
+                                <th>Beer Names</th>
+                                <th>Type</th>
+                                <th>Clarity</th>
+                                <th>Hue</th>
+                                <th>Bitterness Units</th>
+                                <th>Bubble Size</th>
+                                <th>Head</th>
+                                <th>Your Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+      </div>
+    </div>
+  </div>
 
  <br>
  <br>
 
- <div class="">
-		<a href="/survey"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> Go to List</button></a>
-	</div>
-
+</div>
 </body>
 
 </html>
