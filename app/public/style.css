@@ -1,0 +1,116 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background: url("beer.jpg") no-repeat top center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display:flex;
+}
+.form {
+  position: relative;
+  overflow: scroll;
+  z-index: 1;
+  background: #FFFFFF;
+  width: 100%;
+  margin: 15px 0;
+  padding: 12px 20px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 15px 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  margin: 15px 0;
+  padding: 12px 20px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.w3-container{
+  /*padding:12px 20px;
+  margin: 15px 0;*/
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input[type=text] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 15px 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+input[name=password] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 15px 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+input[name=email] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 15px 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.h2 {
+  font-color:white;
+}
+.h5{
+  font-color: white;
+}
+.btn {
+  padding: 2px;
+  margin: 1px 0;
+}
+.chosen-select{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 15px 0;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.w3-panel.w3-padding-16.w3-black.w3-opacity.w3-card-2.w3-hover-opacity-off {
+  width: 65vw;
+}

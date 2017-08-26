@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
     <title>Beer Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    .myLink {display: none}
+    </style>
 </head>
- 
-<body>
+
+<body class="w3-light-grey">
+  <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+    <img class="w3-image" src="beer.jpg" alt="London" width="1500" height="700">
+    <div class="w3-display-middle" style="width:65%">
+  <div class="w3-container">
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
     <form id="signup" name="signup" method="post" action="/signup">
         <label for="email">Email Address</label>
-        <input class="text" name="email" type="email" />
-        <label for="firstname">Firstname</label>
-        <input name="firstname" type="text" />
-        <label for="lastname">Lastname</label>
-        <input name="lastname" type="text" />
+        <input class="text" placeholder="Whatcha Ya Email"name="email" type="email" />
+        <label for="firstname">First Name</label>
+        <input name="firstname" placeholder="First Name"type="text" />
+        <label for="lastname">Last Name</label>
+        <input name="lastname" placeholder="Last Name"type="text" />
         <label for="password">Password</label>
-        <input name="password" type="password" />
+        <input name="password" placeholder="Password"type="password" />
         <input class="btn" type="submit" value="Sign Up" />
+        <p class="message"> Already Registered?  <a href="signin.html">Sign In</a></p>
     </form>
- 
+    <footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+    </footer>
 </body>
- 
+
 </html>
