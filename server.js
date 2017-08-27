@@ -34,6 +34,11 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 
+// THIS IS CRITICAL :) Because it imports static content onto html. 
+// Starting with all the static content of app/public, all that gets imported 
+// onto the server
+app.use(express.static("app/public")); 
+
 // For Passport
 app.use(session({ 
 	secret: 'keyboard cat',
@@ -49,9 +54,9 @@ app.use(passport.session()); // persistent login sessions
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
-app.get('/', function(req, res) { 
-    res.send('Welcome to Passport with Sequelize');
-});
+// app.get('/', function(req, res) { 
+//     res.send('Welcome to Passport with Sequelize');
+// });
 
 //Models
 var models = require("./models");
@@ -59,7 +64,8 @@ var models = require("./models");
 //Routes
 // Getting an error that says require is not a function
 // require("./app/routes/apiRoutes")(app);
-// require("./app/routes/htmlRoutes")(app);
+require("./app/routes/htmlRoutes")(app);
+
 var authRoute = require('./app/routes/auth.js')(app, passport);
 
 //load passport strategies
