@@ -1,23 +1,26 @@
-module.exports = function(sequelize, Sequelize) {
- 
-    var Beer = sequelize.define('user', {
+module.exports = function(sequelize, DataTypes) {
+
+// TODO: change filename to beers.js 
+// Changed user to beer, because this defines beer, not user
+
+    var beer = sequelize.define('beer', {
  
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: Sequelize.INTEGER
+            type: DataTypes.INTEGER
         },
         ibu: {
-            type: Sequelize.INTEGER
+            type: DataTypes.INTEGER
         },
         pairing: {
-            type: Sequelize.STRING
+            type: DataTypes.STRING
         },
         style: {
-            type: Sequelize.STRING
+            type: DataTypes.STRING
         }
     });
  
-    return Beer;
+    return beer;
 }
 
