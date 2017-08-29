@@ -63,8 +63,12 @@ var models = require("./models");
 
 //Routes
 // Getting an error that says require is not a function
-// require("./app/routes/apiRoutes")(app);
-require("./app/routes/htmlRoutes")(app);
+
+var apiRoutes = require("./app/routes/apiRoutes");
+var htmlRoutes = require("./app/routes/htmlRoutes");
+
+app.use('/', htmlRoutes);
+app.use('/api', apiRoutes);
 
 var authRoute = require('./app/routes/auth.js')(app, passport);
 

@@ -21,8 +21,10 @@
   },
   "homepage": "https://github.com/masteremmy/BeerFinder#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
+    "brewerydb-node": "0.0.1",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-session": "^1.15.5",
