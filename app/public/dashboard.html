@@ -99,17 +99,22 @@
 <script type="text/javascript">
 
     var apiKey = '3f1612c064ffbdbd5925f006fa955076';
-    var queryUrl = 'http://api.brewerydb.com/v2/?key=' + apiKey;
+    var queryUrl = 'http://api.brewerydb.com/v2/?id=1&key=' + apiKey;
     // Write this up soon
     $(document).ready(function() {
-        console.log(queryUrl);        
+        $.ajax({
+            url: queryUrl,
+            method: 'GET'
+        }).done(function(response) {
+            console.log(response);
+        })   
     })
-    $("#submit").on("click", function() {
+    // $("#submit").on("click", function() {
 
-        // $.ajax({
+    //     // $.ajax({
 
-        // })
-    });
+    //     // })
+    // });
 
 
 </script>
