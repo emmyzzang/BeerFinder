@@ -91,15 +91,36 @@
 </div>
 </body>
 
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+    var apiKey = '3f1612c064ffbdbd5925f006fa955076';
+    var queryUrl = 'http://api.brewerydb.com/v2/?id=1&key=' + apiKey;
+    // Write this up soon
+    $(document).ready(function() {
+        $.ajax({
+            url: queryUrl,
+            method: 'GET'
+        }).done(function(response) {
+            console.log(response);
+        })   
+    })
+    // $("#submit").on("click", function() {
+
+    //     // $.ajax({
+
+    //     // })
+    // });
+
+
+</script>
 </html>
 
-<!--
-	<script type="text/javascript">
-
-// Write this up soon
-$("#submit").on("click", function() {
 
 
-	</script>
 
- -->
+ 
