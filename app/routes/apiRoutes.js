@@ -23,14 +23,17 @@ var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
   // ---------------------------------------------------------------------------
 
   router.get("/beers", function(req, res) {
-  	var search = 'English Pale';
-  	var nameArray = [];
-	brewdb.search.all({q: search}, function(err, data) {
-		for(var i = 0; i < data.length; i++) {
-			nameArray.push(data[i].name);
-		}
-	    res.json(nameArray);
-	});
+      var search = 'English Pale';
+      var beerQuery = [];
+    brewdb.search.all({q: search}, function(err, data) {
+        for(var i = 0; i < data.length; i++) {
+            beerQuery.push({
+                name: data[i].name,
+                description: data[i].description
+            });
+        }
+        res.json(nameArray);
+    });
 
   });
 
