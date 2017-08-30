@@ -16,21 +16,29 @@
 </head>
 
 <body class="w3-light-grey">
-
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3">
+        <a href="reviews.html" class="w3-button w3-block w3-black">REVIEWS</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="list.html" class="w3-button w3-block w3-black">YOUR LIST</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="catalogue.html" class="w3-button w3-block w3-black">CATALOGUE</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="randomize.html" class="w3-button w3-block w3-black">FEELING LUCKY?</a>
+      </div>
+    </div>
+  </div>
     <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
     </header>
+
       <div class="w3-display-middle" style=" margin-top: 20em;">
     <div class="w3-container">
 
-      <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
-        <ul>
-        <li><a class="active" href="reviews.html" style="width: 25%;">Review</a></li>
-        <li><a href="list.html" style="width: 25%;">Your List</a></li>
-        <li><a href="catalogue.html" style="width: 25%;">Catalogue</a></li>
-        <li><a href="randomize.html"style="width: 25%;">Feeling Lucky?</a></li>
-        </ul>
-        <h2>Dashboard</h2>
-        <h5>Hurray! you are logged in.</h5>
+      <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off w3-quarter">
     <form id="dashboard" name="dashboard" method="post" action="/signup">
 
 		<!-- Take Info from this form and move to user's personal profile list -->
@@ -114,7 +122,7 @@
             method: 'GET'
         }).done(function(response) {
             console.log(response);
-        })   
+        })
     })
     // $("#submit").on("click", function() {
 
@@ -126,8 +134,3 @@
 
 </script>
 </html>
-
-
-
-
- 
