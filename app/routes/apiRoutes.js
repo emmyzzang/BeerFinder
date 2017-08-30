@@ -32,7 +32,8 @@ var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
                 description: data[i].description
             });
         }
-        res.json(nameArray);
+        console.log(data);
+        res.json(beerQuery);
     });
 
   });

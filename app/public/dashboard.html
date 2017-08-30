@@ -19,45 +19,81 @@
   <div class="w3-top">
     <div class="w3-row w3-padding w3-black">
       <div class="w3-col s3">
-        <a href="reviews.html" class="w3-button w3-block w3-black">REVIEWS</a>
+        <a href="dashboard" class="w3-button w3-block w3-black">
+          <i class="fa fa-beer fa-lg" aria-hidden="true"></i>
+          &nbsp; DASHBOARD
+        </a>
       </div>
-      <div class="w3-col s3">
-        <a href="list.html" class="w3-button w3-block w3-black">YOUR LIST</a>
+      <div class="w3-col s2">
+        <a href="reviews.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-star fa-lg" aria-hidden="true"></i>
+          &nbsp; REVIEWS
+        </a>
       </div>
-      <div class="w3-col s3">
-        <a href="catalogue.html" class="w3-button w3-block w3-black">CATALOGUE</a>
+      <div class="w3-col s2">
+        <a href="list.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-list fa-lg" aria-hidden="true"></i>
+          &nbsp; YOUR LIST
+        </a>
       </div>
-      <div class="w3-col s3">
-        <a href="randomize.html" class="w3-button w3-block w3-black">FEELING LUCKY?</a>
+      <div class="w3-col s2">
+        <a href="catalogue.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+          &nbsp; CATALOGUE
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="randomize.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-question fa-lg" aria-hidden="true"></i>
+          &nbsp; FEELING LUCKY
+        </a>
       </div>
     </div>
   </div>
-    <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
-    </header>
 
-      <div class="w3-display-middle" style=" margin-top: 20em;">
+  <div class="w3-display-middle w3-margin-top" style=" margin-top: 20em;">
     <div class="w3-container">
+        <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off w3-quarter">
 
-      <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off w3-quarter">
-    <form id="dashboard" name="dashboard" method="post" action="/signup">
+          <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+             <div class="w3-quarter">
+               <a href="reviews.html" class="w3-button w3-block w3-black">
+                 <i class="fa fa-star fa-5x" aria-hidden="true"></i>
+                  <h3>Reviews</h3>
+              </a>
+               <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+             </div>
+             <div class="w3-quarter">
+               <a href="list.html" class="w3-button w3-block w3-black">
+                  <i class="fa fa-list fa-5x" aria-hidden="true"></i>
+                 <h3>Your List</h3>
+               </a>
+               <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+             </div>
+             <div class="w3-quarter">
+               <a href="catalogue.html" class="w3-button w3-block w3-black">
+                  <i class="fa fa-search fa-5x" aria-hidden="true"></i>
+                  <h3>Catalogue</h3>
+               </a>
+               <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+               <p>What else?</p>
+             </div>
+             <div class="w3-quarter">
 
-		<!-- Take Info from this form and move to user's personal profile list -->
+               <a href="randomize.html" class="w3-button w3-block w3-black">
+                 <i class="fa fa-question fa-5x" aria-hidden="true"></i>
+                 <h3>Feeling Lucky</h3>
+               </a>
+               <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+             </div>
+           </div>
 
-        <h3><label for="name">Beer Name</label><h3>
-        <input class="text" name="name" type="text" />
-        <h3><label for="type">What Type?</label></h3>
-        <input class="text"name="type" type="text" placeholder="IPA"/>
-        <h3><label for "clarity">Clarity?</label></h3>
-        <input class="text" name="clarity" type="text" placeholder="Foggy"/>
-        <h3><label for "Hue">Hue?</label></h3>
-        <input class="text" name="hue" type="text" placeholder="Golden"/>
-        <h3><label for "Bitterness Units">International Bitterness Units?</label></h3>
-        <input class="text" name="biterness unites" type="text" placeholder="60"/>
-        <h3><label for "Bubble Size">Bubble Size?</label></h3>
-        <input class="text" name="bubble size" type="text" placeholder="Large"/>
-        <h3><label for "Head">Head?</label></h3>
-        <input class="text" name="head" type="text" placeholder="Firm Head"/>
-        <h3>Your Rating</strong></h3>
+
+
+        </div>
+    </div>
+  </div>
+        <!-- <h3>Your Rating</strong></h3>
 		<select data-placeholder="" class="chosen-select" id="userRating">
 		<option value=""></option>
 		<option value="1">1 (Ick!)</option>
@@ -97,13 +133,13 @@
             </div>
             <br>
       </div>
-    </div>
-  </div>
+    <!-- </div>
+  </div> -->
 
- <br>
+ <!-- <br>
  <br>
 
-</div>
+</div> --> -->
 </body>
 
 <script
@@ -130,7 +166,5 @@
 
     //     // })
     // });
-
-
 </script>
 </html>
