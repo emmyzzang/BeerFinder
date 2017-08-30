@@ -18,6 +18,13 @@ var passport = require('passport');
 var session = require('express-session');
 var env = require('dotenv').load();
 
+// ==============================================================================
+// HANDLEBARS CONFIGURATION
+// This sets up the basic properties for Handlebars
+// ==============================================================================
+var exphbs = require('express-handlebars'); 
+app.engine("handlebars", exphbs({ defaultLayout: "main"}));
+app.set("view engine", "handlebars"); 
 
 // Sets an initial port. We'll use this later in our listener
 const PORT = process.env.PORT || 8080; // This is a local placeholder

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Beer Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    .myLink {display: none}
+    </style>
+</head>
+
+<body class="w3-light-grey">
+    <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+    </header>
+      <div class="w3-display-middle" style=" margin-top: 20em;">
+    <div class="w3-container">
+
+      <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+        <h2>Dashboard</h2>
+        <h5>Hurray! you are logged in.</h5>
+    <form id="dashboard" name="dashboard" method="post" action="/signup">
+
+		<!-- Take Info from this form and move to user's personal profile list -->
+
+        <h3><label for="name">Beer Name</label><h3>
+        <input class="text" name="name" type="text" />
+        <h3><label for="type">What Type?</label></h3>
+        <input class="text"name="type" type="text" placeholder="IPA"/>
+        <h3><label for "clarity">Clarity?</label></h3>
+        <input class="text" name="clarity" type="text" placeholder="Foggy"/>
+        <h3><label for "Hue">Hue?</label></h3>
+        <input class="text" name="hue" type="text" placeholder="Golden"/>
+        <h3><label for "Bitterness Units">International Bitterness Units?</label></h3>
+        <input class="text" name="biterness unites" type="text" placeholder="60"/>
+        <h3><label for "Bubble Size">Bubble Size?</label></h3>
+        <input class="text" name="bubble size" type="text" placeholder="Large"/>
+        <h3><label for "Head">Head?</label></h3>
+        <input class="text" name="head" type="text" placeholder="Firm Head"/>
+        <h3>Your Rating</strong></h3>
+		<select data-placeholder="" class="chosen-select" id="userRating">
+		<option value=""></option>
+		<option value="1">1 (Ick!)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Wow!)</option>
+	</select>
+
+        <input class="btn" type="submit" value="Submit!" />
+    </form>
+    <div class="w3-container">
+
+            <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+                <div class="w3-container">
+                    <p class="w3-large"><b>Past Beers!</b></p>
+                </div>
+                <div class="container"></div>
+                <div class="panel-body">
+                    <table class="table table-hover" style="width:100%" id='beers-table'>
+                        <thead>
+                            <tr>
+                                <th>Beer Names</th>
+                                <th>Type</th>
+                                <th>Clarity</th>
+                                <th>Hue</th>
+                                <th>Bitterness Units</th>
+                                <th>Bubble Size</th>
+                                <th>Head</th>
+                                <th>Your Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+      </div>
+    </div>
+  </div>
+
+ <br>
+ <br>
+
+
+    <div class="row">
+        <!-- column 1 - TASTY BURGERS -->
+        <div class="col-md-6 text-center">
+
+            <h2>Itadakimasu!</h2>
+
+            <ol>
+                {{#each beerQuery}}
+               {{!--      {{#unless this.devoured}} --}}
+                        <li>
+                            <h3>
+                           {{!--  {{this.burger_name}} --}}
+
+                            <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                                <input type="hidden" name="devoured" value="true">
+                                <button type="submit" class="btn btn-primary">Itadakimasu!</button>
+                            </form>
+                            </h3>
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ol>               
+        <!-- end column 1 -->
+        </div>          
+        
+        <!-- column 2 - DEVOURED BURGERS -->
+        <div class="col-md-6 text-center">
+
+            <h2>Gochiso Sama Deshita!</h2>
+
+            <ol>
+                {{#each burgers}}
+                    {{#if this.devoured}}
+                        <li>
+                            <h3>
+                            {{this.burger_name}}
+                            ... OM NOM NYOM
+                            <h3>
+                            <!-- Comment this out if you do not want them to disappear. Also take out the partials function 'delete-burger' -->
+                            {{> burgers/delete-burger}} 
+
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ol>
+        <!-- end column 2 -->
+        </div>  
+        
+    <!-- end row 3 -->
+    </div>
+
+
+</div>
+</body>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+    var apiKey = '3f1612c064ffbdbd5925f006fa955076';
+    var queryUrl = 'http://api.brewerydb.com/v2/?id=1&key=' + apiKey;
+    // Write this up soon
+    $(document).ready(function() {
+        $.ajax({
+            url: queryUrl,
+            method: 'GET'
+        }).done(function(response) {
+            console.log(response);
+        })   
+    })
+    // $("#submit").on("click", function() {
+
+    //     // $.ajax({
+
+    //     // })
+    // });
+
+
+</script>
+</html>
+
+
+
+
+ 
