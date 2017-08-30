@@ -15,7 +15,7 @@ const router = require('express').Router();
   // In each of the below cases the user is shown an HTML page of content
   // ---------------------------------------------------------------------------
 
-  router.get('/', function(req, res) { 
+  router.get('/', function(req, res) {
     console.log('home')
     res.sendFile(path.join(__dirname, "/../public/signin.html"));
 	});

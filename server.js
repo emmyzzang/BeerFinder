@@ -5,7 +5,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path"); 
+const path = require("path");
 
 // ==============================================================================
 // EXPRESS CONFIGURATION
@@ -22,9 +22,9 @@ var env = require('dotenv').load();
 // HANDLEBARS CONFIGURATION
 // This sets up the basic properties for Handlebars
 // ==============================================================================
-var exphbs = require('express-handlebars'); 
+var exphbs = require('express-handlebars');
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
-app.set("view engine", "handlebars"); 
+app.set("view engine", "handlebars");
 
 // Sets an initial port. We'll use this later in our listener
 const PORT = process.env.PORT || 8080; // This is a local placeholder
@@ -41,15 +41,15 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 
-// THIS IS CRITICAL :) Because it imports static content onto html. 
-// Starting with all the static content of app/public, all that gets imported 
+// THIS IS CRITICAL :) Because it imports static content onto html.
+// Starting with all the static content of app/public, all that gets imported
 // onto the server
-app.use(express.static("app/public")); 
+app.use(express.static("app/public"));
 
 // For Passport
-app.use(session({ 
+app.use(session({
 	secret: 'keyboard cat',
-	resave: true, 
+	resave: true,
 	saveUninitialized:true
 })); // session secret
 app.use(passport.initialize());
@@ -61,7 +61,7 @@ app.use(passport.session()); // persistent login sessions
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
-// app.get('/', function(req, res) { 
+// app.get('/', function(req, res) {
 //     res.send('Welcome to Passport with Sequelize');
 // });
 
@@ -74,6 +74,8 @@ var models = require("./models");
 var apiRoutes = require("./app/routes/apiRoutes");
 var htmlRoutes = require("./app/routes/htmlRoutes");
 
+// Anything that deals with html routes is based off of root.
+// Anything that deals with api routes deals with /api as a root. 
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
 

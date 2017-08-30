@@ -37,6 +37,13 @@ var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
     });
 
   });
+  
+// This already assumes /api is in front of it (/api/search)
+router.post("/search", function(req, res) {
+
+  console.log('GOODBYE WORLD');
+
+});
 
   // app.get("/api/beerAdd", function(req, res) {
   //   res.json(waitListData);
