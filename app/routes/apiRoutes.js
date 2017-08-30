@@ -13,6 +13,8 @@
 // // ===============================================================================
 var axios = require('axios');
 var router = require('express').Router();
+var BreweryDb = require('brewerydb-node');
+var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
 
   // API GET Requests
   // Below code handles when users "visit" a page.
@@ -21,13 +23,15 @@ var router = require('express').Router();
   // ---------------------------------------------------------------------------
 
   router.get("/beers", function(req, res) {
-  	console.log('getting beers!')
-  	axios.get('http://api.brewerydb.com/v2/beers?styleId=15&key=3f1612c064ffbdbd5925f006fa955076')
-  		.then(function(response) {
-  			console.log(response.data);
-  			res.json(response.data);
-  		})
-    // res.json(tableData);
+  	var search = 'English Pale';
+  	var nameArray = [];
+	brewdb.search.all({q: search}, function(err, data) {
+		for(var i = 0; i < data.length; i++) {
+			nameArray.push(data[i].name);
+		}
+	    res.json(nameArray);
+	});
+
   });
 
   // app.get("/api/beerAdd", function(req, res) {
@@ -68,3 +72,8 @@ var router = require('express').Router();
 //   });
 
 module.exports = router;
+
+
+
+// Database:
+// brewdb.search.all() - finds every parent category of types of beers
