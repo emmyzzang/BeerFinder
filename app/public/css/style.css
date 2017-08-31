@@ -201,14 +201,14 @@ a{
 	top:-4px;
 	opacity:1;
 }
-
+/*used to be green*/
 #wheel div.sec:nth-child(1){
 	transform: rotate(60deg);
 	-webkit-transform: rotate(60deg);
 	-moz-transform: rotate(60deg);
 	-o-transform: rotate(60deg);
 	-ms-transform: rotate(60deg);
-	border-color: #16a085 transparent;
+	border-color: #ffffff transparent;
 }
 #wheel div.sec:nth-child(2){
 	transform: rotate(120deg);
@@ -216,7 +216,7 @@ a{
 	-moz-transform: rotate(120deg);
 	-o-transform: rotate(120deg);
 	-ms-transform: rotate(120deg);
-	border-color: #2980b9 transparent;
+	border-color: #D3D3D3 transparent;
 }
 #wheel div.sec:nth-child(3){
 	transform: rotate(180deg);
@@ -224,7 +224,7 @@ a{
 	-moz-transform: rotate(180deg);
 	-o-transform: rotate(180deg);
 	-ms-transform: rotate(180deg);
-	border-color: #34495e transparent;
+	border-color: #ffffff transparent;
 }
 #wheel div.sec:nth-child(4){
 	transform: rotate(240deg);
@@ -232,7 +232,7 @@ a{
 	-moz-transform: rotate(240deg);
 	-o-transform: rotate(240deg);
 	-ms-transform: rotate(240deg);
-	border-color: #f39c12 transparent;
+	border-color: #D3D3D3 transparent;
 }
 #wheel div.sec:nth-child(5){
 	transform: rotate(300deg);
@@ -240,7 +240,7 @@ a{
 	-moz-transform: rotate(300deg);
 	-o-transform: rotate(300deg);
 	-ms-transform: rotate(300deg);
-	border-color: #d35400 transparent;
+	border-color: #ffffff transparent;
 }
 #wheel div.sec:nth-child(6){
 	transform: rotate(360deg);
@@ -248,7 +248,7 @@ a{
 	-moz-transform: rotate(360deg);
 	-o-transform: rotate(360deg);
 	-ms-transform: rotate(360deg);
-	border-color: #c0392b transparent;
+	border-color: #D3D3D3 transparent;
 }
 
 
