@@ -26,13 +26,14 @@ var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
   	var search = 'English Pale';
   	var beerQuery = [];
 	brewdb.search.all({q: search}, function(err, data) {
-		for(var i = 0; i < data.length; i++) {
-			beerQuery.push({
-				name: data[i].name,
-				description: data[i].description
-			});
-		}
-	    res.json(nameArray);
+		// for(var i = 0; i < data.length; i++) {
+		// 	beerQuery.push({
+		// 		name: data[i].name,
+		// 		description: data[i].description
+		// 	});
+		// }
+	 //    console.log(data[0].style.description);
+	    res.json(data);
 	});
 
   });
