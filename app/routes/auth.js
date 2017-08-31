@@ -12,11 +12,11 @@ module.exports = function(app, passport) {
 	app.post('/signup', passport.authenticate('local-signup', {
 	        successRedirect: '/dashboard',
 	        failureRedirect: '/signup'
-	    } 
+	    }
 	));
 
 	app.post('/signin', passport.authenticate('local-signin', {
-	        successRedirect: '/dashboard',	 
+	        successRedirect: '/dashboard',
 	        failureRedirect: '/signin'
 	    }
 	));
@@ -27,4 +27,3 @@ module.exports = function(app, passport) {
 	    res.redirect('/signin');
 	};
 }
-

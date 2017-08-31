@@ -2,70 +2,156 @@
 <html>
 
 <head>
-    <title>Beer Finder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <title>Beer Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-    .myLink {display: none}
-    </style>
+  <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+  .myLink {display: none}
+  </style>
 </head>
 
 <body class="w3-light-grey">
-    <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
-    </header>
-      <div class="w3-display-middle" style=" margin-top: 20em;">
-    <div class="w3-container">
-    <div class="w3-container">
-
-            <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
-                <div class="w3-container">
-                    <p class="w3-large"><b>Past Beers!</b></p>
-                </div>
-                <div class="container"></div>
-                <div class="panel-body">
-                    <table class="table table-hover" style="width:100%" id='beers-table'>
-                        <thead>
-                            <tr>
-                                <th>Beer Names</th>
-                                <th>Type</th>
-                                <th>Clarity</th>
-                                <th>Hue</th>
-                                <th>Bitterness Units</th>
-                                <th>Bubble Size</th>
-                                <th>Head</th>
-                                <th>Your Rating</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <br>
+  <!-- NAVBAR START -->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3">
+        <a href="dashboard" class="w3-button w3-block w3-black">
+          <i class="fa fa-beer fa-lg" aria-hidden="true"></i>
+          &nbsp; DASHBOARD
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="reviews" class="w3-button w3-block w3-black">
+          <i class="fa fa-star fa-lg" aria-hidden="true"></i>
+          &nbsp; REVIEWS
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="list" class="w3-button w3-block w3-black">
+          <i class="fa fa-list fa-lg" aria-hidden="true"></i>
+          &nbsp; YOUR LIST
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="catalogue" class="w3-button w3-block w3-black">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+          &nbsp; CATALOGUE
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="randomize" class="w3-button w3-block w3-black">
+          <i class="fa fa-question fa-lg" aria-hidden="true"></i>
+          &nbsp; FEELING LUCKY
+        </a>
       </div>
     </div>
   </div>
+  <!-- NAVBAR END -->
+  <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  </header>
+  <!-- <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+</header> -->
 
- <br>
- <br>
+<!-- FORM STARTS HERE  -->
+<div class="w3-display-middle" style=" margin-top: 20em;">
+  <div class="w3-container">
 
-</div>
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off w3-quarter">
+        <!-- FOR LATER USE: <form id="dashboard" name="dashboard" method="post" action="/signup"> -->
+        <form id="catalogue" name="catalogue" method="post" action="/api/search">
+
+        <!-- Take Info from this form and move to user's personal profile list
+             Can use the user's input as a req.params -->
+        <h3><label for="name">Beer Name</label><h3>
+          <input class="text" name="name" type="text" />
+          <h3><label for="type">What Type?</label></h3>
+          <input class="text"name="type" type="text" placeholder="IPA"/>
+          <h3><label for "clarity">Clarity?</label></h3>
+          <input class="text" name="clarity" type="text" placeholder="Foggy"/>
+          <h3><label for "Hue">Hue?</label></h3>
+          <input class="text" name="hue" type="text" placeholder="Golden"/>
+          <h3><label for "Bitterness Units">International Bitterness Units?</label></h3>
+          <input class="text" name="ibu" type="text" placeholder="60"/>
+          <h3><label for "Bubble Size">Bubble Size?</label></h3>
+          <input class="text" name="bubble size" type="text" placeholder="Large"/>
+          <h3><label for "Head">Head?</label></h3>
+          <input class="text" name="head" type="text" placeholder="Firm Head"/>
+          <input class="btn" type="submit" value="Submit!" />
+
+
+        </form>
+      </div>
+    </div>
+
+    <div class="w3-container">
+
+      <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+        <div class="w3-container">
+          <p class="w3-large"><b>Past Beers!</b></p>
+        </div>
+        <div class="container"></div>
+        <div class="panel-body">
+          <table class="table table-hover" style="width:100%" id='beers-table'>
+            <thead>
+              <tr>
+                <th>Beer Names</th>
+                <th>Type</th>
+                <th>Clarity</th>
+                <th>Hue</th>
+                <th>Bitterness Units</th>
+                <th>Bubble Size</th>
+                <th>Head</th>
+                <th>Your Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+  <div id="result">
+    {{#each customers}} // Note the reference to the customers object​
+    <li> {{ firstName }} {{ lastName }} </li>​
+       {{/each}}
+
+  </div>
+
+  <script id="result" type="text/x-handlebars-template">​
+   {{#each customers}} // Note the reference to the customers object​
+   <li> {{ firstName }} {{ lastName }} </li>​
+      {{/each}}
+  ​</script>
+
+  <!-- <script id="shoe-template" type="x-handlebars-template">​ -->
+  <!-- //  {{#each this}}​ -->
+    <!-- // <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​ -->
+      <!-- // {{/each}} -->
+   <!-- </script>  -->
+
+
+<!--Linking the JQuery Library -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+
+<!-- <script type="text/javascript"> -->
+<!-- // Write this up soon -->
+<!-- // $(".btn").on("click", function() { -->
+
+<!-- // console.log('HELLO WORLD!'); -->
+<!-- }); -->
+
+<!-- // </script> -->
+
+
+
 </body>
 
 </html>
-
-<!--
-	<script type="text/javascript">
-
-// Write this up soon
-$("#submit").on("click", function() {
-
-
-	</script>
-
- -->

@@ -13,6 +13,8 @@
 // // ===============================================================================
 var axios = require('axios');
 var router = require('express').Router();
+var $ = require('jquery');
+var handlebars = require('handlebars');
 var BreweryDb = require('brewerydb-node');
 var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
 
@@ -35,8 +37,80 @@ var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
 	 //    console.log(data[0].style.description);
 	    res.json(data);
 	});
+      var search = 'English Pale';
+      var beerQuery = [];
+    brewdb.search.all({q: search}, function(err, data) {
+        for(var i = 0; i < data.length; i++) {
+            beerQuery.push({
+                name: data[i].name,
+                description: data[i].description
+            });
+        }
+        console.log(data);
+        res.json(beerQuery);
+    });
 
   });
+
+// This already assumes /api is in front of it (/api/search)
+  router.post("/search", function(req, res) {
+
+    console.log('GOODBYE WORLD!');
+
+    var search = 'English Pale';
+    var beerQuery = [];
+
+  console.log("name " + req.body.name);
+  console.log("type " + req.body.type);
+  console.log("ibu " + req.body.ibu);
+
+  var queryObj = {};
+
+  if(req.body.name != '') {
+    queryObj['name'] = req.body.name;
+  }
+  if(req.body.type != '') {
+    queryObj['type'] = req.body.type;
+  }
+  if(req.body.ibu !='') {
+    queryObj['ibu'] = req.body.ibu;
+
+  }
+
+  // Use case for empty search query...
+  if(Object.keys(queryObj).length === 0 && queryObj.constructor === Object) {
+
+  }
+
+  brewdb.beer.find(queryObj, function(err, data) {
+      if(err) {
+        console.log(err);
+        return;
+      }
+      if(data === null) return;
+      for(var i = 0; i < data.length; i++) {
+        beerQuery.push({
+          name: data[i].name,
+          description: data[i].description
+        });
+      }
+  // console.log(data);
+  // res.json(data);
+  var theData = {
+  beers: beerQuery
+  };
+
+  // var hbsObject = { burgers: data };
+  console.log(theData);
+  res.render('catalogue', theData);
+
+  // res.render('result', theData);
+  // res.end();
+
+});
+
+});
+
 
   // app.get("/api/beerAdd", function(req, res) {
   //   res.json(waitListData);
