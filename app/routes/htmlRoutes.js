@@ -15,18 +15,30 @@ const router = require('express').Router();
   // In each of the below cases the user is shown an HTML page of content
   // ---------------------------------------------------------------------------
 
+  // Redirects root to Sign-In Page
   router.get('/', function(req, res) {
-    console.log('home')
-    res.sendFile(path.join(__dirname, "/../public/signin.html"));
+    res.sendFile(path.join(__dirname, "../public/signin.html"));
 	});
-
-  // app.get("/beers", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "/../public/beers.html"));
-  // });
-
-  // app.get("/beersAdd", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "/../public/beersAdd.html"));
-  // });
+  // Dashboard
+  router.get('/dashboard', function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+  });
+  // Reviews
+  router.get('/reviews', function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/reviews.html"));
+  });
+  // list
+  router.get('/list', function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/list.html"));
+  });
+  // Catalogue
+  router.get('/catalogue', function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/catalogue.html"));
+  });
+  // Randomize
+  router.get('/randomize', function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/randomize.html"));
+  });
 
   // If no matching route is found default to home
   // app.use(function(req, res) {

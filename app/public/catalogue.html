@@ -16,6 +16,7 @@
 </head>
 
 <body class="w3-light-grey">
+  <!-- NAVBAR START -->
   <div class="w3-top">
     <div class="w3-row w3-padding w3-black">
       <div class="w3-col s3">
@@ -25,31 +26,32 @@
         </a>
       </div>
       <div class="w3-col s2">
-        <a href="reviews.html" class="w3-button w3-block w3-black">
+        <a href="reviews" class="w3-button w3-block w3-black">
           <i class="fa fa-star fa-lg" aria-hidden="true"></i>
           &nbsp; REVIEWS
         </a>
       </div>
       <div class="w3-col s2">
-        <a href="list.html" class="w3-button w3-block w3-black">
+        <a href="list" class="w3-button w3-block w3-black">
           <i class="fa fa-list fa-lg" aria-hidden="true"></i>
           &nbsp; YOUR LIST
         </a>
       </div>
       <div class="w3-col s2">
-        <a href="catalogue.html" class="w3-button w3-block w3-black">
+        <a href="catalogue" class="w3-button w3-block w3-black">
           <i class="fa fa-search fa-lg" aria-hidden="true"></i>
           &nbsp; CATALOGUE
         </a>
       </div>
       <div class="w3-col s2">
-        <a href="randomize.html" class="w3-button w3-block w3-black">
+        <a href="randomize" class="w3-button w3-block w3-black">
           <i class="fa fa-question fa-lg" aria-hidden="true"></i>
           &nbsp; FEELING LUCKY
         </a>
       </div>
     </div>
   </div>
+  <!-- NAVBAR END -->
   <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
   </header>
   <!-- <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
@@ -116,7 +118,24 @@
     </div>
   </div>
 
+  <div id="result">
+    {{#each customers}} // Note the reference to the customers object​
+    <li> {{ firstName }} {{ lastName }} </li>​
+       {{/each}}
 
+  </div>
+
+  <script id="result" type="text/x-handlebars-template">​
+   {{#each customers}} // Note the reference to the customers object​
+   <li> {{ firstName }} {{ lastName }} </li>​
+      {{/each}}
+  ​</script>
+
+  <!-- <script id="shoe-template" type="x-handlebars-template">​ -->
+  <!-- //  {{#each this}}​ -->
+    <!-- // <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​ -->
+      <!-- // {{/each}} -->
+   <!-- </script>  -->
 
 
 <!--Linking the JQuery Library -->

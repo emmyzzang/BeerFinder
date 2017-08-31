@@ -13,6 +13,8 @@
 // // ===============================================================================
 var axios = require('axios');
 var router = require('express').Router();
+var $ = require('jquery');
+var handlebars = require('handlebars');
 var BreweryDb = require('brewerydb-node');
 var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
 
@@ -80,8 +82,19 @@ var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
           description: data[i].description
         });
       }
-  console.log(data);
-  res.json(data);
+  // console.log(data);
+  // res.json(data);
+  var theData = {
+  beers: beerQuery
+  };
+
+  // var hbsObject = { burgers: data };
+  console.log(theData);
+  res.render('catalogue', theData);
+
+  // res.render('result', theData);
+  // res.end();
+
 });
 
 });
