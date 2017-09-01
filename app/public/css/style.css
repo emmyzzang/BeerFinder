@@ -52,6 +52,7 @@ body{
 .w3-container{
   /*padding:12px 20px;
   margin: 15px 0;*/
+  margin-top: 400px;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -141,7 +142,13 @@ a{
 	color:#34495e;
 }
 
+.beerName {
+	width: 15%;
+}
 
+.beerChoice {
+	width: 75%;
+}
 
 
 /*WRAPPER*/

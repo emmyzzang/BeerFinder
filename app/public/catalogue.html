@@ -68,11 +68,11 @@
 
         <!-- Take Info from this form and move to user's personal profile list
              Can use the user's input as a req.params -->
-        <h3><label for="name">Beer Name</label><h3>
-          <input class="text" name="name" type="text" />
+<!--      <h3><label for="name">Beer Name</label><h3>
+          <input class="text" name="name" type="text" /> -->
           <h3><label for="type">What Type?</label></h3>
           <input class="text"name="type" type="text" placeholder="IPA"/>
-          <h3><label for "clarity">Clarity?</label></h3>
+<!--           <h3><label for "clarity">Clarity?</label></h3>
           <input class="text" name="clarity" type="text" placeholder="Foggy"/>
           <h3><label for "Hue">Hue?</label></h3>
           <input class="text" name="hue" type="text" placeholder="Golden"/>
@@ -81,7 +81,7 @@
           <h3><label for "Bubble Size">Bubble Size?</label></h3>
           <input class="text" name="bubble size" type="text" placeholder="Large"/>
           <h3><label for "Head">Head?</label></h3>
-          <input class="text" name="head" type="text" placeholder="Firm Head"/>
+          <input class="text" name="head" type="text" placeholder="Firm Head"/> -->
           <input class="btn" type="submit" value="Submit!" />
 
 
@@ -176,16 +176,18 @@
     },
     function(res){
       console.log(res);
-    //   for (var i = 0; i < res.length; i++) {
-    //     var tr = $('<tr>');
-    //     var td = $('<td>');
-    //     var td2 = $('<td>');
-    //     td.text(res[i].name);
-    //     td2.text(res[i].description);
-    //     tr.append(td);
-    //     tr.append(td2);
-    //     $('tbody').append(tr);
-    //   }
+      $('#catalogue').replaceWith('<table id="resTable"><th>Name</th><th>Description</th></table>');
+        for (var i = 30; i < res.length; i++) {
+          $('#resTable').append('<tr><td class="beerName"><button class="beerChoice">' + res[i].name + '</button></td><td>' + res[i].description + '</td><tr>');
+          // var tr = $('<tr>');
+          // var td = $('<td>');
+          // var td2 = $('<td>');
+          // td.text(res[i].name);
+          // td2.text(res[i].description);
+          // tr.append(td);
+          // tr.append(td2);
+          // $('tbody').append(tr);
+        }
     }
   )
 
