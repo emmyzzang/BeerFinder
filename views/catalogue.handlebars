@@ -1,62 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Beer Finder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
-
-
-  <style>
-  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-  .myLink {display: none}
-  </style>
-</head>
-
-<body class="w3-light-grey">
-  <!-- NAVBAR START -->
-  <div class="w3-top">
-    <div class="w3-row w3-padding w3-black">
-      <div class="w3-col s3">
-        <a href="dashboard" class="w3-button w3-block w3-black">
-          <i class="fa fa-beer fa-lg" aria-hidden="true"></i>
-          &nbsp; DASHBOARD
-        </a>
-      </div>
-      <div class="w3-col s2">
-        <a href="reviews" class="w3-button w3-block w3-black">
-          <i class="fa fa-star fa-lg" aria-hidden="true"></i>
-          &nbsp; REVIEWS
-        </a>
-      </div>
-      <div class="w3-col s2">
-        <a href="list" class="w3-button w3-block w3-black">
-          <i class="fa fa-list fa-lg" aria-hidden="true"></i>
-          &nbsp; YOUR LIST
-        </a>
-      </div>
-      <div class="w3-col s2">
-        <a href="catalogue" class="w3-button w3-block w3-black">
-          <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-          &nbsp; CATALOGUE
-        </a>
-      </div>
-      <div class="w3-col s2">
-        <a href="randomize" class="w3-button w3-block w3-black">
-          <i class="fa fa-question fa-lg" aria-hidden="true"></i>
-          &nbsp; FEELING LUCKY
-        </a>
-      </div>
-    </div>
-  </div>
-  <!-- NAVBAR END -->
+  {{> navbar}}
   <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
   </header>
-  <!-- <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
-</header> -->
 
 <!-- FORM STARTS HERE  -->
 <div class="w3-display-middle" style=" margin-top: 20em;">
@@ -71,7 +15,7 @@
         <h3><label for="name">Beer Name</label><h3>
           <input class="text" name="name" type="text" />
           <h3><label for="type">What Type?</label></h3>
-          <input class="text"name="type" type="text" placeholder="IPA"/>
+          <input class="text"name="search" type="text" placeholder="IPA"/>
           <h3><label for "clarity">Clarity?</label></h3>
           <input class="text" name="clarity" type="text" placeholder="Foggy"/>
           <h3><label for "Hue">Hue?</label></h3>
@@ -111,6 +55,12 @@
               </tr>
             </thead>
             <tbody>
+              {{#each beers}}
+                <tr> {{ name }} {{ description }} </tr>
+              {{/each}}
+              <!-- <tr>
+                <th> -->
+
             </tbody>
           </table>
         </div>
@@ -121,32 +71,13 @@
 
 
 
-
-<!--Linking the JQuery Library -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
-
-<!-- <script type="text/javascript"> -->
-<!-- // Write this up soon -->
-<!-- // $(".btn").on("click", function() { -->
-
-<!-- // console.log('HELLO WORLD!'); -->
-<!-- }); -->
-
-<!-- // </script> -->
-
-
-
-</body>
-
-</html>
-
-
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+</script>
 
 <script>
+
 
   $('.btn').click(function(e){
     e.preventDefault();
@@ -155,10 +86,10 @@
 
     $.get('/beers',
     {
-      search: $('input[name="type"]').val()
+      search: $('input[name="search"]').val()
     },
-    function(res){
-      console.log(res);
+    // function(res){
+    //   // console.log(res);
     //   for (var i = 0; i < res.length; i++) {
     //     var tr = $('<tr>');
     //     var td = $('<td>');
@@ -169,7 +100,7 @@
     //     tr.append(td2);
     //     $('tbody').append(tr);
     //   }
-    }
+    // }
   )
 
   })
