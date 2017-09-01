@@ -17,7 +17,7 @@ const router = require('express').Router();
 
   // Redirects root to Sign-In Page
   router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, "/../public/signin.html"));
+    res.sendFile(path.join(__dirname, "../public/signin.html"));
 	});
   // Dashboard
   router.get('/dashboard', function(req, res) {

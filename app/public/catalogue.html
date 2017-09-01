@@ -119,7 +119,24 @@
     </div>
   </div>
 
+  <div id="result">
+    {{#each customers}} // Note the reference to the customers object​
+    <li> {{ firstName }} {{ lastName }} </li>​
+       {{/each}}
 
+  </div>
+
+  <script id="result" type="text/x-handlebars-template">​
+   {{#each customers}} // Note the reference to the customers object​
+   <li> {{ firstName }} {{ lastName }} </li>​
+      {{/each}}
+  ​</script>
+
+  <!-- <script id="shoe-template" type="x-handlebars-template">​ -->
+  <!-- //  {{#each this}}​ -->
+    <!-- // <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​ -->
+      <!-- // {{/each}} -->
+   <!-- </script>  -->
 
 
 <!--Linking the JQuery Library -->

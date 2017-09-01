@@ -83,7 +83,7 @@ app.use('/', apiRoutes);
 
 require('./app/routes/auth.js')(app, passport);
 
-//load passport strategies
+// Load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
 
 //Sync Database
