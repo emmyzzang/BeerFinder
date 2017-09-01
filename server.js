@@ -77,9 +77,10 @@ var htmlRoutes = require("./app/routes/htmlRoutes");
 // Anything that deals with html routes is based off of root.
 // Anything that deals with api routes deals with /api as a root.
 app.use('/', htmlRoutes);
-app.use('/api', apiRoutes);
 
-// Provides user authentication
+// app.use('/api', apiRoutes); means routes like this /api/beers
+app.use('/', apiRoutes);
+
 require('./app/routes/auth.js')(app, passport);
 
 // Load passport strategies

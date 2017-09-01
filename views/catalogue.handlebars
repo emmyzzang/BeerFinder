@@ -8,7 +8,7 @@
 
     <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off w3-quarter">
         <!-- FOR LATER USE: <form id="dashboard" name="dashboard" method="post" action="/signup"> -->
-        <form id="catalogue" name="catalogue" method="post" action="/api/search">
+        <form id="catalogue" name="catalogue">
 
         <!-- Take Info from this form and move to user's personal profile list
              Can use the user's input as a req.params -->
@@ -56,7 +56,7 @@
             </thead>
             <tbody>
               {{#each beers}}
-                <li> {{ name }} {{ description }} </li>
+                <tr> {{ name }} {{ description }} </tr>
               {{/each}}
               <!-- <tr>
                 <th> -->
@@ -68,3 +68,40 @@
       <br>
     </div>
   </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+</script>
+
+<script>
+
+
+  $('.btn').click(function(e){
+    e.preventDefault();
+
+    console.log('THIS WORKS!!!!');
+
+    $.get('/beers',
+    {
+      search: $('input[name="search"]').val()
+    },
+    // function(res){
+    //   // console.log(res);
+    //   for (var i = 0; i < res.length; i++) {
+    //     var tr = $('<tr>');
+    //     var td = $('<td>');
+    //     var td2 = $('<td>');
+    //     td.text(res[i].name);
+    //     td2.text(res[i].description);
+    //     tr.append(td);
+    //     tr.append(td2);
+    //     $('tbody').append(tr);
+    //   }
+    // }
+  )
+
+  })
+</script>
