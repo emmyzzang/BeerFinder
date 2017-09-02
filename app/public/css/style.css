@@ -57,6 +57,7 @@ body{
   justify-content: center;
   align-items: center;
 }
+
 input[type=text] {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -141,7 +142,13 @@ a{
 	color:#34495e;
 }
 
+.beerName {
+	width: 15%;
+}
 
+.beerChoice {
+	width: 75%;
+}
 
 
 /*WRAPPER*/
