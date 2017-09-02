@@ -62,62 +62,7 @@ var db = require("../../models");
         console.log('success');
         res.json(201, {response: {code: 201, message: 'Beer has been added'}});
       });
-
-
-
-      //   queryString,
-      // function(err) {
-      //   if(err) {
-      //     return res.json(400, {response: {code: 400, message:'An error appeared.'}});
-      //   } else {
-      //     console.log('success');
-      //     res.json(201, {response: {code: 201, message: 'Beer has been added'}});
-      // }});
 });
-
-
-//
-// name: {
-//     type: DataTypes.INTEGER
-// },
-// type: {
-//     type: DataTypes.STRING
-// },
-// clarity: {
-//     type: DataTypes.STRING
-// },
-// hue: {
-//     type: DataTypes.STRING
-// },
-// ibu: {
-//     type: DataTypes.INTEGER
-// },
-// bubbleSize: {
-//     type: DataTypes.STRING
-// },
-// head: {
-//     type: DataTypes.STRING
-// }
-//
-
-//
-// db.Todo.create({
-//   text: req.body.text,
-//   complete: req.body.complete
-// }).then(function(dbTodo) {
-//   // We have access to the new todo as an argument inside of the callback function
-//   res.json(dbTodo);
-// });
-//
-//
-// //module.exports = function(sequelize, DataTypes) {
-//   var Todo = sequelize.define("Todo", {
-//     text: DataTypes.STRING,
-//     complete: DataTypes.BOOLEAN
-//   });
-//   return Todo;
-// };
-
 
 
 // This already assumes /api is in front of it (/api/search)
