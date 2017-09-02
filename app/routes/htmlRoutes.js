@@ -20,25 +20,28 @@ const router = require('express').Router();
     res.sendFile(path.join(__dirname, "../public/signin.html"));
 	});
   // Dashboard
-  router.get('/dashboard', function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
-  });
+  // router.get('/dashboard', function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+  // });
   // Reviews
-  router.get('/reviews', function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/reviews.html"));
-  });
-  // list
-  router.get('/list', function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/list.html"));
-  });
-  // Catalogue
-  router.get('/catalogue', function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/catalogue.html"));
-  });
-  // Randomize
-  router.get('/randomize', function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/randomize.html"));
-  });
+
+  // ** COMMENTED OUT BECAUSE IT WAS BYPASSING USER AUTH LOGIN" ** // 
+
+  // router.get('/reviews', function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/reviews.html"));
+  // });
+  // // list
+  // router.get('/list', function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/list.html"));
+  // });
+  // // Catalogue
+  // router.get('/catalogue', function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/catalogue.html"));
+  // });
+  // // Randomize
+  // router.get('/randomize', function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/randomize.html"));
+  // });
 
   // If no matching route is found default to home
   // app.use(function(req, res) {

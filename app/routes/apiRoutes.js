@@ -19,6 +19,8 @@ var BreweryDb = require('brewerydb-node');
 var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
 var sequelize = require('sequelize');
 var db = require("../../models");
+var userController = require('../controllers/usercontroller.js');
+
 
   // API GET Requests
   // Below code handles when users "visit" a page.
@@ -60,6 +62,8 @@ var db = require("../../models");
         head: req.body.head
       }).then(function(dbTodo) {
         console.log('success');
+        var user = userController.getUser();
+        console.log(user);
         res.json(201, {response: {code: 201, message: 'Beer has been added'}});
       });
 });
