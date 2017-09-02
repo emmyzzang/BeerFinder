@@ -12,11 +12,13 @@
 // // ROUTING
 // // ===============================================================================
 var axios = require('axios');
-var router = require('express').Router();
+var router = require('express').Router(); // We do not need module.export way because we declared it here
 // var $ = require('jquery');
 var handlebars = require('handlebars');
 var BreweryDb = require('brewerydb-node');
 var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
+var sequelize = require('sequelize');
+var db = require("../../models");
 
   // API GET Requests
   // Below code handles when users "visit" a page.
@@ -43,6 +45,80 @@ var brewdb = new BreweryDb('3f1612c064ffbdbd5925f006fa955076');
     });
 
   });
+
+  router.post('/reviews', function(req, res) {
+      var reviews = req.body;
+      console.log(req.body);
+
+      db.beer.create({
+        name: req.body.name,
+        type: req.body.type,
+        clarity: req.body.clarity,
+        hue: req.body.hue,
+        ibu: req.body.ibu,
+        bubbleSize: req.body.bubbleSize,
+        head: req.body.head
+      }).then(function(dbTodo) {
+        console.log('success');
+        res.json(201, {response: {code: 201, message: 'Beer has been added'}});
+      });
+
+
+
+      //   queryString,
+      // function(err) {
+      //   if(err) {
+      //     return res.json(400, {response: {code: 400, message:'An error appeared.'}});
+      //   } else {
+      //     console.log('success');
+      //     res.json(201, {response: {code: 201, message: 'Beer has been added'}});
+      // }});
+});
+
+
+//
+// name: {
+//     type: DataTypes.INTEGER
+// },
+// type: {
+//     type: DataTypes.STRING
+// },
+// clarity: {
+//     type: DataTypes.STRING
+// },
+// hue: {
+//     type: DataTypes.STRING
+// },
+// ibu: {
+//     type: DataTypes.INTEGER
+// },
+// bubbleSize: {
+//     type: DataTypes.STRING
+// },
+// head: {
+//     type: DataTypes.STRING
+// }
+//
+
+//
+// db.Todo.create({
+//   text: req.body.text,
+//   complete: req.body.complete
+// }).then(function(dbTodo) {
+//   // We have access to the new todo as an argument inside of the callback function
+//   res.json(dbTodo);
+// });
+//
+//
+// //module.exports = function(sequelize, DataTypes) {
+//   var Todo = sequelize.define("Todo", {
+//     text: DataTypes.STRING,
+//     complete: DataTypes.BOOLEAN
+//   });
+//   return Todo;
+// };
+
+
 
 // This already assumes /api is in front of it (/api/search)
   // router.post("/search", function(req, res) {

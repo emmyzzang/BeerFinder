@@ -35,30 +35,30 @@ let orm = require('../config/orm.js');
 // Beer-specific inputs Sequelized
 // ==============================================================================
 
-module.exports = function(sequelize, Sequelize) {
-
- // Figure out variable names and rename everything 
-    var Beers = sequelize.define('beers', {
- 
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
- 
-        name: {
-            type: Sequelize.STRING,
-            notEmpty: true
-        },
- 
-        userRating: {
-            type: Sequelize.STRING,
-            notEmpty: true
-        }
- 
- 
-    });
- 
-    return Beers;
- 
-}
+// module.exports = function(sequelize, Sequelize) {
+//
+//  // Figure out variable names and rename everything
+//     var Beers = sequelize.define('beers', {
+//
+//         id: {
+//             autoIncrement: true,
+//             primaryKey: true,
+//             type: Sequelize.INTEGER
+//         },
+//
+//         name: {
+//             type: Sequelize.STRING,
+//             notEmpty: true
+//         },
+//
+//         userRating: {
+//             type: Sequelize.STRING,
+//             notEmpty: true
+//         }
+//
+//
+//     });
+//
+//     return Beers;
+//
+// }

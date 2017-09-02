@@ -17,10 +17,18 @@ module.exports = function(sequelize, DataTypes) {
 
 
 	var Rating = sequelize.define('rating', {
-	    rating: DataTypes.INTEGER
-	});
 
-	// TODO: Fix belongsToMany 
+		id: {
+				autoIncrement: true,
+				primaryKey: true,
+				type: DataTypes.INTEGER
+		},
+	    	rating: DataTypes.INTEGER
+
+
+		});
+
+	// TODO: Fix belongsToMany
 
 	User.belongsToMany(Beer, { through: 'Rating', foreignKey: 'id' })
 	Beer.belongsToMany(User, { through: 'Rating', foreignKey: 'id' })
