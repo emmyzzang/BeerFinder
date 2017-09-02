@@ -71,7 +71,16 @@
 <!--      <h3><label for="name">Beer Name</label><h3>
           <input class="text" name="name" type="text" /> -->
           <h3><label for="type">What Type?</label></h3>
-          <input class="text"name="type" type="text" placeholder="IPA"/>
+          <!-- <input class="text"name="type" type="text" placeholder="IPA"/> -->
+          <!-- <select data-placeholder="" class="chosen-select" id="userRating"> -->
+          <select data-placeholder="IPA" id="type" class="w3-col s6">
+            <option value=""></option>
+            <option value="Ales">Ales</option>
+            <option value="Lagers">Lagers</option>
+            <option value="Stouts">Stouts</option>
+            <option value="IPA">IPA</option>
+            <option value="BEER">BEER</option>
+          </select>
 <!--           <h3><label for "clarity">Clarity?</label></h3>
           <input class="text" name="clarity" type="text" placeholder="Foggy"/>
           <h3><label for "Hue">Hue?</label></h3>
@@ -172,7 +181,7 @@
 
     $.get('/beers',
     {
-      search: $('input[name="type"]').val()
+      search: $('[id="type"]').val()
     },
     function(res){
       console.log(res);
