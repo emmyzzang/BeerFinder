@@ -150,6 +150,11 @@ a{
 	width: 75%;
 }
 
+#beers-table {
+  text-align: center; 
+}
+
+
 
 /*WRAPPER*/
 #wrapper{

@@ -19,6 +19,11 @@ exports.reviews = function(req, res) {
 }
 
 exports.list = function(req, res) {
+
+    // Using the user id...get Ratings Table Data
+    // With Ratings Table Data... Get Beer List
+    // Do the inverse of the double-insert table 
+
     res.sendFile(path.join(__dirname, '../public/list.html'));
 }
 

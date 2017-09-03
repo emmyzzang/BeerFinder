@@ -53,37 +53,59 @@ router.post('/reviews', function(req, res) {
 
   var myRating = req.body.userRating;
 
-  // In this situation, we are inserting into the db twice
-  // The first time, we insert into the beers table to get beer_id
-  // The second time, we take the beer_id AND user_id to insert into the ratings table
-  db.beer.create({
-    name: req.body.name,
-    type: req.body.type,
-    clarity: req.body.clarity,
-    hue: req.body.hue,
-    ibu: req.body.ibu,
-    bubbleSize: req.body.bubbleSize,
-    head: req.body.head
-  }).then(function(beerObj) {
-        var user_id = userController.getUser();
-        var beer_id = beerObj.id;
+  var userId = userController.getUser();
+  // This checks to make sure user is logged in. If not, redirect to signin page.
+  if(userId == null) {
+    res.redirect('/signin');
+  }
 
-        // Start of a db insert inside a db insert
-        db.rating.create({
-          user_rating: myRating,
-          user_id: user_id,
-          beer_id: beer_id
-        }).then(function(rating) {
-          console.log('Rating Successful');
-          // Redirects to list page - another db insert inside a db insert
-            res.sendFile(path.join(__dirname, '../public/list.html'));
-        });
+  db.rating.create({
+    user_rating: myRating,
+    userId: userId
+    // The callback response after inserting to the rating table in db
+  }).then(function(ratingObj) {
+
+    var ratingId = ratingObj.id;
+
+    // inserting into the beer table in the db
+    db.beer.create({
+      name: req.body.name,
+      type: req.body.type,
+      clarity: req.body.clarity,
+      hue: req.body.hue,
+      ibu: req.body.ibu,
+      bubbleSize: req.body.bubbleSize,
+      head: req.body.head,
+      ratingId: ratingId // This is originating from the db.rating.create insert
+    }).then(function() {
+      console.log('Beer Insert Successful!');
+      res.redirect('/list');
+    });
   });
-
 });
 
-module.exports = router;
+// Create a new router to display user list - list.html called this function and
+// Grab stuff from db to populate to html.
+router.get('/myList', function(req, res) {
+  var userId = userController.getUser();
+  // This checks to make sure user is logged in (again). If not, redirect to signin page.
+  if(userId == null) {
+    res.redirect('/signin');
+  }
 
+  db.rating.findAll({
+    where: {
+      userId: userId
+    },
+    include: [db.beer]
+  }).then(function(listResult) {
+    console.log('My List Object: ' + listResult);
+    res.json(listResult);
+  });
+});
+
+
+module.exports = router;
 
 
 // Database:

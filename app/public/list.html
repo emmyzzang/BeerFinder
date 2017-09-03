@@ -2,17 +2,17 @@
 <html>
 
 <head>
-    <title>Beer Finder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <title>Beer Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-    .myLink {display: none}
-    </style>
+  <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+  .myLink {display: none}
+  </style>
 </head>
 
 <body class="w3-light-grey">
@@ -53,58 +53,75 @@
   </div>
   <!-- NAVBAR END -->
 
-    <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
-    </header>
-      <div class="w3-display-middle" style=" margin-top: 20em;">
+  <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  </header>
+  <div class="w3-display-middle" style=" margin-top: 20em;">
     <div class="w3-container">
 
 
-    <div class="w3-container">
+      <div class="w3-container">
 
-            <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
-                <div class="w3-container">
-                    <p class="w3-large"><b>Past Beers!</b></p>
-                </div>
-                <div class="container"></div>
-                <div class="panel-body">
-                    <table class="table table-hover" style="width:100%" id='beers-table'>
-                        <thead>
-                            <tr>
-                                <th>Beer Names</th>
-                                <th>Type</th>
-                                <th>Clarity</th>
-                                <th>Hue</th>
-                                <th>Bitterness Units</th>
-                                <th>Bubble Size</th>
-                                <th>Head</th>
-                                <th>Your Rating</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <br>
+        <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+          <div class="w3-container">
+            <p class="w3-large"><b>Past Beers!</b></p>
+          </div>
+          <div class="container"></div>
+          <div class="panel-body">
+            <table class="table table-hover" style="width:100%" id='beers-table'>
+              <thead>
+                <tr>
+                  <th>Beer Names</th>
+                  <th>Type</th>
+                  <th>Clarity</th>
+                  <th>Hue</th>
+                  <th>Bitterness Units</th>
+                  <th>Bubble Size</th>
+                  <th>Head</th>
+                  <th>Your Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br>
       </div>
     </div>
   </div>
 
- <br>
- <br>
+  <br>
+  <br>
 
 </div>
 </body>
-
 </html>
 
-<!--
-	<script type="text/javascript">
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
 
-// Write this up soon
-$("#submit").on("click", function() {
-
-
-	</script>
-
- -->
+<script>
+// Not dependent on a click, because user list loads on pageload
+// Do not need to worry about dynamic loading because as a user, solely populating list
+$.get('/myList',
+// Do not need a second parameter because the second param would have been used for a post
+// And we are only retreiving info from this /myList route (which is where the logic that does db call sits)
+function(res){
+  // Iterate thru result of the .get call /myList -- the object from the db
+  // Populate the UI
+  for (var i = 0; i < res.length; i++) {
+    $('#beers-table').append(
+      '<tr><td class="beerName"><button class="beerChoice">' + res[i].beers[0].name + '</button></td>' +
+      '<td>' + res[i].beers[0].type + '</td>' +
+      '<td>' + res[i].beers[0].clarity + '</td>' +
+      '<td>' + res[i].beers[0].hue + '</td>' +
+      '<td>' + res[i].beers[0].ibu + '</td>' +
+      '<td>' + res[i].beers[0].bubbleSize + '</td>' +
+      '<td>' + res[i].beers[0].head + '</td>' +
+      '<td>' + res[i].user_rating + '</td>' +
+      '</tr>');
+    }
+  });
+  </script>
