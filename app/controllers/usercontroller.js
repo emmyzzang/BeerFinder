@@ -1,3 +1,4 @@
+// Created this controller to create setters and getters that track user auth 
 var exports = module.exports = {}
 
 var user = '';
