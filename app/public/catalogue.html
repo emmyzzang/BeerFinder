@@ -209,7 +209,7 @@ $('.btn').click(function(e){
   function(res){
     console.log(res);
     $('#catalogue').replaceWith('<table id="resTable"><th>Name</th><th>Description</th></table>');
-    for (var i = 30; i < res.length; i++) {
+    for (var i = 0; i < res.length; i++) {
 
 
       if(res[i].description != undefined) {
