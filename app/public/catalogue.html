@@ -20,10 +20,22 @@
   <!-- NAVBAR START -->
   <div class="w3-top">
     <div class="w3-row w3-padding w3-black">
-      <div class="w3-col s3">
+      <div class="w3-col s2">
         <a href="dashboard" class="w3-button w3-block w3-black">
           <i class="fa fa-beer fa-lg" aria-hidden="true"></i>
           &nbsp; DASHBOARD
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="catalogue" class="w3-button w3-block w3-black">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+          &nbsp; CATALOGUE
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="randomize" class="w3-button w3-block w3-black">
+          <i class="fa fa-question fa-lg" aria-hidden="true"></i>
+          &nbsp; FEELING LUCKY
         </a>
       </div>
       <div class="w3-col s2">
@@ -39,15 +51,9 @@
         </a>
       </div>
       <div class="w3-col s2">
-        <a href="catalogue" class="w3-button w3-block w3-black">
-          <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-          &nbsp; CATALOGUE
-        </a>
-      </div>
-      <div class="w3-col s2">
-        <a href="randomize" class="w3-button w3-block w3-black">
-          <i class="fa fa-question fa-lg" aria-hidden="true"></i>
-          &nbsp; FEELING LUCKY
+        <a href="logout" class="w3-button w3-block w3-black">
+          <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
+          &nbsp; SIGN-OUT
         </a>
       </div>
     </div>
@@ -63,119 +69,119 @@
   <div class="w3-container">
 
     <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off w3-quarter">
-        <!-- FOR LATER USE: <form id="dashboard" name="dashboard" method="post" action="/signup"> -->
-        <form id="catalogue" name="catalogue">
+      <!-- FOR LATER USE: <form id="dashboard" name="dashboard" method="post" action="/signup"> -->
+      <form id="catalogue" name="catalogue">
 
         <!-- Take Info from this form and move to user's personal profile list
-             Can use the user's input as a req.params -->
-<!--      <h3><label for="name">Beer Name</label><h3>
-          <input class="text" name="name" type="text" /> -->
-          <h3><label for="type">What Type?</label></h3>
-          <!-- <input class="text"name="type" type="text" placeholder="IPA"/> -->
-          <!-- <select data-placeholder="" class="chosen-select" id="userRating"> -->
-          <select data-placeholder="IPA" id="type" class="w3-col s12" style="height: 50px">
-            <option value=""></option>
-            <option value="Ale">Ale</option>
-            <option value="American">American</option>
-            <option value="Belgian">Belgian</option>
-            <option value="Black">Black</option>
-            <option value="Brown">Brown</option>
-            <option value="Bock">Bock</option>
-            <option value="Chocolate">Chocolate</option>
-            <option value="Coffee">Coffee</option>
-            <option value="Fruit">Fruit</option>
-            <option value="Honey">Honey</option>
-            <option value="IPA">IPA</option>
-            <option value="Lager">Lager</option>
-            <option value="Organic">Organic</option>
-            <option value="Pilsner">Pilsner</option>
-            <option value="Porter">Porter</option>
-            <option value="Pumpkin">Pumpkin</option>
-            <option value="Scottish">Scottish</option>
+        Can use the user's input as a req.params -->
+        <!--      <h3><label for="name">Beer Name</label><h3>
+        <input class="text" name="name" type="text" /> -->
+        <h3><label for="type">What Type?</label></h3>
+        <!-- <input class="text"name="type" type="text" placeholder="IPA"/> -->
+        <!-- <select data-placeholder="" class="chosen-select" id="userRating"> -->
+        <select data-placeholder="IPA" id="type" class="w3-col s12" style="height: 50px">
+          <option value=""></option>
+          <option value="Ale">Ale</option>
+          <option value="American">American</option>
+          <option value="Belgian">Belgian</option>
+          <option value="Black">Black</option>
+          <option value="Brown">Brown</option>
+          <option value="Bock">Bock</option>
+          <option value="Chocolate">Chocolate</option>
+          <option value="Coffee">Coffee</option>
+          <option value="Fruit">Fruit</option>
+          <option value="Honey">Honey</option>
+          <option value="IPA">IPA</option>
+          <option value="Lager">Lager</option>
+          <option value="Organic">Organic</option>
+          <option value="Pilsner">Pilsner</option>
+          <option value="Porter">Porter</option>
+          <option value="Pumpkin">Pumpkin</option>
+          <option value="Scottish">Scottish</option>
 
-            <option value="Sour">Sour</option>
-            <option value="Spice">Spice</option>
-            <option value="Stout">Stout</option>
-          </select>
-<!--           <h3><label for "clarity">Clarity?</label></h3>
-          <input class="text" name="clarity" type="text" placeholder="Foggy"/>
-          <h3><label for "Hue">Hue?</label></h3>
-          <input class="text" name="hue" type="text" placeholder="Golden"/>
-          <h3><label for "Bitterness Units">International Bitterness Units?</label></h3>
-          <input class="text" name="ibu" type="text" placeholder="60"/>
-          <h3><label for "Bubble Size">Bubble Size?</label></h3>
-          <input class="text" name="bubble size" type="text" placeholder="Large"/>
-          <h3><label for "Head">Head?</label></h3>
-          <input class="text" name="head" type="text" placeholder="Firm Head"/> -->
-          &nbsp;
-          <input class="btn w3-round w3-block" style="height: 50px" type="submit" value="Submit!" />
+          <option value="Sour">Sour</option>
+          <option value="Spice">Spice</option>
+          <option value="Stout">Stout</option>
+        </select>
+        <!--           <h3><label for "clarity">Clarity?</label></h3>
+        <input class="text" name="clarity" type="text" placeholder="Foggy"/>
+        <h3><label for "Hue">Hue?</label></h3>
+        <input class="text" name="hue" type="text" placeholder="Golden"/>
+        <h3><label for "Bitterness Units">International Bitterness Units?</label></h3>
+        <input class="text" name="ibu" type="text" placeholder="60"/>
+        <h3><label for "Bubble Size">Bubble Size?</label></h3>
+        <input class="text" name="bubble size" type="text" placeholder="Large"/>
+        <h3><label for "Head">Head?</label></h3>
+        <input class="text" name="head" type="text" placeholder="Firm Head"/> -->
+        &nbsp;
+        <input class="btn w3-round w3-block" style="height: 50px" type="submit" value="Submit!" />
 
 
-        </form>
-      </div>
-    </div>
-
-    <div class="w3-container">
-
-      <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
-        <div class="w3-container">
-          <p class="w3-large"><b>Past Beers!</b></p>
-        </div>
-        <div class="container"></div>
-        <div class="panel-body">
-          <table class="table table-hover" style="width:100%" id='beers-table'>
-            <thead>
-              <tr>
-                <th>Beer Names</th>
-                <th>Type</th>
-                <th>Clarity</th>
-                <th>Hue</th>
-                <th>Bitterness Units</th>
-                <th>Bubble Size</th>
-                <th>Head</th>
-                <th>Your Rating</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <br>
+      </form>
     </div>
   </div>
 
-  <div id="result">
-    {{#each customers}} // Note the reference to the customers object​
-    <li> {{ firstName }} {{ lastName }} </li>​
-       {{/each}}
+  <div class="w3-container">
 
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off">
+      <div class="w3-container">
+        <p class="w3-large"><b>Past Beers!</b></p>
+      </div>
+      <div class="container"></div>
+      <div class="panel-body">
+        <table class="table table-hover" style="width:100%" id='beers-table'>
+          <thead>
+            <tr>
+              <th>Beer Names</th>
+              <th>Type</th>
+              <th>Clarity</th>
+              <th>Hue</th>
+              <th>Bitterness Units</th>
+              <th>Bubble Size</th>
+              <th>Head</th>
+              <th>Your Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
   </div>
+</div>
 
-  <script id="result" type="text/x-handlebars-template">​
-   {{#each customers}} // Note the reference to the customers object​
-   <li> {{ firstName }} {{ lastName }} </li>​
-      {{/each}}
+<div id="result">
+  {{#each customers}} // Note the reference to the customers object​
+  <li> {{ firstName }} {{ lastName }} </li>​
+  {{/each}}
+
+</div>
+
+<script id="result" type="text/x-handlebars-template">​
+  {{#each customers}} // Note the reference to the customers object​
+  <li> {{ firstName }} {{ lastName }} </li>​
+  {{/each}}
   ​</script>
 
   <!-- <script id="shoe-template" type="x-handlebars-template">​ -->
   <!-- //  {{#each this}}​ -->
-    <!-- // <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​ -->
-      <!-- // {{/each}} -->
-   <!-- </script>  -->
+  <!-- // <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​ -->
+  <!-- // {{/each}} -->
+  <!-- </script>  -->
 
 
-<!--Linking the JQuery Library -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+  <!--Linking the JQuery Library -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
 
-<!-- <script type="text/javascript"> -->
-<!-- // Write this up soon -->
-<!-- // $(".btn").on("click", function() { -->
+  <!-- <script type="text/javascript"> -->
+  <!-- // Write this up soon -->
+  <!-- // $(".btn").on("click", function() { -->
 
-<!-- // console.log('HELLO WORLD!'); -->
-<!-- }); -->
+  <!-- // console.log('HELLO WORLD!'); -->
+  <!-- }); -->
 
-<!-- // </script> -->
+  <!-- // </script> -->
 
 
 
@@ -185,42 +191,42 @@
 
 
 <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
 
 <script>
 
-  $('.btn').click(function(e){
-    e.preventDefault();
+$('.btn').click(function(e){
+  e.preventDefault();
 
-    console.log('THIS WORKS!!!!');
+  console.log('THIS WORKS!!!!');
 
-    $.get('/beers',
-    {
-      search: $('[id="type"]').val()
-    },
-    function(res){
-      console.log(res);
-      $('#catalogue').replaceWith('<table id="resTable"><th>Name</th><th>Description</th></table>');
-        for (var i = 30; i < res.length; i++) {
+  $.get('/beers',
+  {
+    search: $('[id="type"]').val()
+  },
+  function(res){
+    console.log(res);
+    $('#catalogue').replaceWith('<table id="resTable"><th>Name</th><th>Description</th></table>');
+    for (var i = 30; i < res.length; i++) {
 
 
-          if(res[i].description != undefined) {
-          $('#resTable').append('<tr><td class="beerName"><button class="beerChoice">' + res[i].name + '</button></td><td>' + res[i].description + '</td><tr>');
+      if(res[i].description != undefined) {
+        $('#resTable').append('<tr><td class="beerName"><button class="beerChoice">' + res[i].name + '</button></td><td>' + res[i].description + '</td><tr>');
 
-          // var tr = $('<tr>');
-          // var td = $('<td>');
-          // var td2 = $('<td>');
-          // td.text(res[i].name);
-          // td2.text(res[i].description);
-          // tr.append(td);
-          // tr.append(td2);
-          // $('tbody').append(tr);
-          }
-        }
+        // var tr = $('<tr>');
+        // var td = $('<td>');
+        // var td2 = $('<td>');
+        // td.text(res[i].name);
+        // td2.text(res[i].description);
+        // tr.append(td);
+        // tr.append(td2);
+        // $('tbody').append(tr);
+      }
     }
-  )
+  }
+)
 
-  })
+})
 </script>

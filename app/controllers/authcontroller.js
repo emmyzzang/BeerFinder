@@ -22,7 +22,7 @@ exports.list = function(req, res) {
 
     // Using the user id...get Ratings Table Data
     // With Ratings Table Data... Get Beer List
-    // Do the inverse of the double-insert table 
+    // Do the inverse of the double-insert table
 
     res.sendFile(path.join(__dirname, '../public/list.html'));
 }
@@ -37,6 +37,6 @@ exports.randomize = function(req, res) {
 
 exports.logout = function(req, res) {
     req.session.destroy(function(err) {
-        res.redirect('/');
+        res.redirect('/signin');
     });
 }
