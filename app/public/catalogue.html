@@ -98,7 +98,6 @@
           <option value="Porter">Porter</option>
           <option value="Pumpkin">Pumpkin</option>
           <option value="Scottish">Scottish</option>
-
           <option value="Sour">Sour</option>
           <option value="Spice">Spice</option>
           <option value="Stout">Stout</option>
@@ -213,7 +212,9 @@ $('.btn').click(function(e){
 
 
       if(res[i].description != undefined) {
-        $('#resTable').append('<tr><td class="beerName"><button class="beerChoice">' + res[i].name + '</button></td><td>' + res[i].description + '</td><tr>');
+        $('#resTable').append('<tr><td class="beerName"><button class="beerChoice" type="submit">' + res[i].name + '</button></td><td>' + res[i].description + '</td><tr>');
+
+
 
         // var tr = $('<tr>');
         // var td = $('<td>');
@@ -225,8 +226,22 @@ $('.btn').click(function(e){
         // $('tbody').append(tr);
       }
     }
-  }
-)
+  });
+});
 
-})
+// ADD SOME TYPE OF ON CLICK EVENT SOMEWHERE IN THIS FILE TO DISPLAY MORE DETAILED BEER INFO
+$(".beerChoice").on('click', function(event) {
+    event.preventDefault();
+    let beerName = res[i].name;
+    let beerType = res[i].type;
+    let beerClarity = res[i].clarity;
+    let beerHue = res[i].hue;
+    let beerIbu = res[i].ibu;
+    let beerBubbleSize = res[i].bubblesize;
+    let beerHead = res[i].head;
+    let beerRating = res[i].rating;
+    console.log("hello we would like more beer info on this specific beer");
+                        $('#myModal').modal('show');
+                        $('#resTable').html('show');
+                    });
 </script>
