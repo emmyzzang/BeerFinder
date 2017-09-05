@@ -25,7 +25,7 @@ const router = require('express').Router();
   // });
   // Reviews
 
-  // ** COMMENTED OUT BECAUSE IT WAS BYPASSING USER AUTH LOGIN" ** // 
+  // ** COMMENTED OUT BECAUSE IT WAS BYPASSING USER AUTH LOGIN" ** //
 
   // router.get('/reviews', function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/reviews.html"));

@@ -4,7 +4,7 @@
   "description": "Find the ocarina of beer!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js"
   },
   "repository": {
@@ -25,14 +25,26 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "brewerydb-node": "0.0.1",
+    "browserify": "^14.4.0",
+    "chai": "^4.1.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.5",
+    "karma": "^1.7.1",
+    "karma-browserify": "^5.1.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-commonjs": "^1.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.4",
+    "mocha": "^3.5.0",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^4.7.1"
+    "sequelize": "^4.7.1",
+    "sinon": "^3.2.1",
+    "supertest": "^3.0.0",
+    "watchify": "^3.9.0"
   }
 }
