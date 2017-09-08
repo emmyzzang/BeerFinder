@@ -70,6 +70,25 @@ body{
 	padding-bottom: 1em;
 }
 
+.cataloguePanel {
+	text-align: center;
+}
+
+.beerListPanel {
+	margin-top: 385px;
+}
+
+.beerChoice {
+	background-color: #ffffff;
+	border: 0;
+	padding: .3em;
+	border-radius: 3px;
+}
+
+.beerChoice:hover {
+	background-color: #FFD326;
+}
+
 input[type=text] {
   font-family: "Roboto", sans-serif;
   outline: 0;
