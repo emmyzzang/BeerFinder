@@ -33,7 +33,7 @@ router.get("/beers", function(req, res) {
   var search = req.query.search;
   var beerQuery = [];
   console.log(search);
-  brewdb.search.all({q: search}, function(err, data) {
+  brewdb.search.all({q: search, withBreweries: "Y"}, function(err, data) {
     // for(var i = 0; i < data.length; i++) {
     //     beerQuery.push({
     //         name: data[i].name,
