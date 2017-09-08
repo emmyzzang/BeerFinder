@@ -58,6 +58,18 @@ body{
   align-items: center;
 }
 
+.w3-modal-content {
+	text-align: center;
+	padding: .3em 2em 2em 2em;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.breweryImg {
+	max-width: 256px;
+	padding-bottom: 1em;
+}
+
 input[type=text] {
   font-family: "Roboto", sans-serif;
   outline: 0;

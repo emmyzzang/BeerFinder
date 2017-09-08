@@ -178,7 +178,10 @@ $('.btn').click(function(e){
 
       if(res[i].description != undefined & res[i].type === 'beer') {
         $('#resTable').append('<tr><td class="beerName"><button class="beerChoice" beerId="' + res[i].id + '" type="submit">' + res[i].breweries[0].name + ': ' + res[i].name + '</button></td><td class="beerDescription">' + res[i].description + '</td><tr>');
-        $('body').append('<div class ="w3-modal" id="' + res[i].id + '"><div class="w3-modal-content w3-animate-top w3-card-4"><p>' + res[i].name + '</p></div></div>');
+        $('body').append('<div class ="w3-modal" id="' + res[i].id + '"><div class="w3-modal-content w3-animate-top w3-card-4"><h2>' + res[i].name + '</h2><h3 id="modalBeerName' + res[i].id + '">' + res[i].breweries[0].name + '</h3><p>' + res[i].description + '</p><span closeId="' + res[i].id + '" class="w3-button w3-display-topright">&times;</span></div></div>');
+        if(res[i].breweries[0].images != undefined) {
+          $('#modalBeerName' + res[i].id).after('<img class="breweryImg" src="' + res[i].breweries[0].images.squareLarge + '">')
+        }
 
 
         // var tr = $('<tr>');
@@ -204,8 +207,20 @@ $(document).on('click', '.beerChoice', function(event) {
     // $('#resTable').html('show');
 });
 
+$(document).on('click', '.w3-display-topright', function(event) {
+    event.preventDefault();
+    var closeId = $(event.target).attr('closeId');
+    console.log($('#' + closeId));
+    modalHide(closeId);
+    // $('#resTable').html('show');
+});
+
 function modalShow(element) {
   $('#' + element).show();
+};
+
+function modalHide(element) {
+  $('#' + element).hide();
 }
 </script>
 </body>
