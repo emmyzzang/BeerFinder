@@ -230,18 +230,20 @@ $('.btn').click(function(e){
 });
 
 // ADD SOME TYPE OF ON CLICK EVENT SOMEWHERE IN THIS FILE TO DISPLAY MORE DETAILED BEER INFO
-$(".beerChoice").on('click', function(event) {
+$(document).on('click', '.beerChoice', function(event) {
     event.preventDefault();
-    let beerName = res[i].name;
-    let beerType = res[i].type;
-    let beerClarity = res[i].clarity;
-    let beerHue = res[i].hue;
-    let beerIbu = res[i].ibu;
-    let beerBubbleSize = res[i].bubblesize;
-    let beerHead = res[i].head;
-    let beerRating = res[i].rating;
-    console.log("hello we would like more beer info on this specific beer");
-                        $('#myModal').modal('show');
-                        $('#resTable').html('show');
-                    });
+    // let beerName = res[i].name;
+    // let beerType = res[i].type;
+    // let beerClarity = res[i].clarity;
+    // let beerHue = res[i].hue;
+    // let beerIbu = res[i].ibu;
+    // let beerBubbleSize = res[i].bubblesize;
+    // let beerHead = res[i].head;
+    // let beerRating = res[i].rating;
+    // var description = this.val();
+    var description = $(this)[0].innerHTML;
+    console.log(description);
+    // $('#myModal').modal('show');
+    // $('#resTable').html('show');
+});
 </script>
