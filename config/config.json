@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "certifiedG48*",
-    "database": "beer_db",
-    "host": "127.0.0.1",
+    "username": "kd8bhf0qlpqtxc17",
+    "password": "cdk6v4uwzkvf3hd9",
+    "database": "jaws_beer",
+    "host": "l6slz5o3eduzatkw.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
