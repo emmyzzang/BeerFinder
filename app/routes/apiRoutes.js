@@ -33,7 +33,7 @@ router.get("/beers", function(req, res) {
   var search = req.query.search;
   var beerQuery = [];
   console.log(search);
-  brewdb.search.all({q: search}, function(err, data) {
+  brewdb.search.all({q: search, withBreweries: "Y"}, function(err, data) {
     // for(var i = 0; i < data.length; i++) {
     //     beerQuery.push({
     //         name: data[i].name,
@@ -103,6 +103,17 @@ router.get('/myList', function(req, res) {
     res.json(listResult);
   });
 });
+
+// deleting the beer from the result object but not the
+router.delete("/posts/:id", function(req, res) {
+  db.rating.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(listResult) {
+    res.json(listResult);
+  })
+})
 
 
 module.exports = router;

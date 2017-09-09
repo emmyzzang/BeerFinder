@@ -108,25 +108,64 @@ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous"></script>
 
 <script>
-// Not dependent on a click, because user list loads on pageload
-// Do not need to worry about dynamic loading because as a user, solely populating list
-$.get('/myList',
-// Do not need a second parameter because the second param would have been used for a post
-// And we are only retreiving info from this /myList route (which is where the logic that does db call sits)
-function(res){
-  // Iterate thru result of the .get call /myList -- the object from the db
-  // Populate the UI
-  for (var i = 0; i < res.length; i++) {
-    $('#beers-table').append(
-      '<tr><td class="beerName"><button class="beerChoice">' + res[i].beers[0].name + '</button></td>' +
-      '<td>' + res[i].beers[0].type + '</td>' +
-      '<td>' + res[i].beers[0].clarity + '</td>' +
-      '<td>' + res[i].beers[0].hue + '</td>' +
-      '<td>' + res[i].beers[0].ibu + '</td>' +
-      '<td>' + res[i].beers[0].bubbleSize + '</td>' +
-      '<td>' + res[i].beers[0].head + '</td>' +
-      '<td>' + res[i].user_rating + '</td>' +
-      '</tr>');
-    }
-  });
+$(document).ready(function() {
+  // Not dependent on a click, because user list loads on pageload
+  // Do not need to worry about dynamic loading because as a user, solely populating list
+  function getBeers() {
+    $.get('/myList',
+    // Do not need a second parameter because the second param would have been used for a post
+    // And we are only retreiving info from this /myList route (which is where the logic that does db call sits)
+    function(res){
+      console.log(res);
+      // Iterate thru result of the .get call /myList -- the object from the db
+      // Populate the UI
+      $('#beers-table').html(
+            '<tr><td class="beerName">' + res[0].beers[0].name + '</td>' +
+            '<td>' + res[0].beers[0].type + '</td>' +
+            '<td>' + res[0].beers[0].clarity + '</td>' +
+            '<td>' + res[0].beers[0].hue + '</td>' +
+            '<td>' + res[0].beers[0].ibu + '</td>' +
+            '<td>' + res[0].beers[0].bubbleSize + '</td>' +
+            '<td>' + res[0].beers[0].head + '</td>' +
+            '<td>' + res[0].user_rating + '</td>' +
+            '<td><i data-beer-id="' + res[0].id + '" class="fa fa-times-circle" aria-hidden="true"></i></td>' + 
+            '</tr>');
+
+      for (var i = 1; i < res.length; i++) {
+          if(res[i].beers.length != 0){
+            $('#beers-table').append(
+            '<tr><td class="beerName">' + res[i].beers[0].name + '</td>' +
+            '<td>' + res[i].beers[0].type + '</td>' +
+            '<td>' + res[i].beers[0].clarity + '</td>' +
+            '<td>' + res[i].beers[0].hue + '</td>' +
+            '<td>' + res[i].beers[0].ibu + '</td>' +
+            '<td>' + res[i].beers[0].bubbleSize + '</td>' +
+            '<td>' + res[i].beers[0].head + '</td>' +
+            '<td>' + res[i].user_rating + '</td>' +
+            '<td><i data-beer-id="' + res[i].id + '" class="fa fa-times-circle" aria-hidden="true"></i></td>' + 
+            '</tr>');
+          }
+        }
+
+
+      $('tr i').click(function(event) {
+          var beerId = $(event.target).data('beer-id');
+          deletePost(beerId);
+      })
+    });
+  };
+
+  function deletePost(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/posts/" + id
+    })
+    .done(function() {
+      getBeers();
+    });
+  } 
+
+  getBeers();
+
+});
   </script>

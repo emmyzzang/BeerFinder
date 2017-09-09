@@ -4,9 +4,10 @@
 <head>
   <title>Beer Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="css/style.css">
 
 
@@ -68,7 +69,7 @@
 <div class="w3-display-middle">
   <div class="w3-container">
 
-    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off w3-quarter">
+    <div class="w3-panel cataloguePanel w3-padding-16 w3-black w3-opacity w3-card-2 w3-hover-opacity-off w3-quarter">
       <!-- FOR LATER USE: <form id="dashboard" name="dashboard" method="post" action="/signup"> -->
       <form id="catalogue" name="catalogue">
 
@@ -150,50 +151,14 @@
   </div>
 </div>
 
-<div id="result">
-  {{#each customers}} // Note the reference to the customers object​
-  <li> {{ firstName }} {{ lastName }} </li>​
-  {{/each}}
-
-</div>
-
-<script id="result" type="text/x-handlebars-template">​
-  {{#each customers}} // Note the reference to the customers object​
-  <li> {{ firstName }} {{ lastName }} </li>​
-  {{/each}}
-  ​</script>
-
-  <!-- <script id="shoe-template" type="x-handlebars-template">​ -->
-  <!-- //  {{#each this}}​ -->
-  <!-- // <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​ -->
-  <!-- // {{/each}} -->
-  <!-- </script>  -->
-
-
-  <!--Linking the JQuery Library -->
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
-
-  <!-- <script type="text/javascript"> -->
-  <!-- // Write this up soon -->
-  <!-- // $(".btn").on("click", function() { -->
-
-  <!-- // console.log('HELLO WORLD!'); -->
-  <!-- }); -->
-
-  <!-- // </script> -->
 
 
 
-</body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-</html>
-
-
-<script
-src="https://code.jquery.com/jquery-3.2.1.min.js"
-integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script>
 
 $('.btn').click(function(e){
@@ -207,13 +172,16 @@ $('.btn').click(function(e){
   },
   function(res){
     console.log(res);
-    $('#catalogue').replaceWith('<table id="resTable"><th>Name</th><th>Description</th></table>');
+    $('#catalogue').replaceWith('<table id="resTable"><th class="beerListHead">Beer!</th></table>');
+    $('.cataloguePanel').addClass("beerListPanel");
     for (var i = 0; i < res.length; i++) {
 
-
-      if(res[i].description != undefined) {
-        $('#resTable').append('<tr><td class="beerName"><button class="beerChoice" type="submit">' + res[i].name + '</button></td><td>' + res[i].description + '</td><tr>');
-
+      if(res[i].description != undefined & res[i].type === 'beer') {
+        $('#resTable').append('<tr><td class="beerName"><button class="beerChoice" beerId="' + res[i].id + '" type="submit">' + res[i].breweries[0].name + ': ' + res[i].name + '</button></td><tr>');
+        $('body').append('<div class ="w3-modal" id="' + res[i].id + '"><div class="w3-modal-content w3-animate-top w3-card-4"><h2>' + res[i].name + '</h2><h3 id="modalBeerName' + res[i].id + '">' + res[i].breweries[0].name + '</h3><p>' + res[i].description + '</p><span closeId="' + res[i].id + '" class="w3-button w3-display-topright">&times;</span></div></div>');
+        if(res[i].breweries[0].images != undefined) {
+          $('#modalBeerName' + res[i].id).after('<img class="breweryImg" src="' + res[i].breweries[0].images.squareLarge + '">')
+        }
 
 
         // var tr = $('<tr>');
@@ -230,18 +198,34 @@ $('.btn').click(function(e){
 });
 
 // ADD SOME TYPE OF ON CLICK EVENT SOMEWHERE IN THIS FILE TO DISPLAY MORE DETAILED BEER INFO
-$(".beerChoice").on('click', function(event) {
+$(document).on('click', '.beerChoice', function(event) {
     event.preventDefault();
-    let beerName = res[i].name;
-    let beerType = res[i].type;
-    let beerClarity = res[i].clarity;
-    let beerHue = res[i].hue;
-    let beerIbu = res[i].ibu;
-    let beerBubbleSize = res[i].bubblesize;
-    let beerHead = res[i].head;
-    let beerRating = res[i].rating;
+    var modalId = $(event.target).attr('beerId');
     console.log("hello we would like more beer info on this specific beer");
-                        $('#myModal').modal('show');
-                        $('#resTable').html('show');
-                    });
+    console.log($('#' + modalId));
+    modalShow(modalId);
+    // $('#resTable').html('show');
+});
+
+$(document).on('click', '.w3-display-topright', function(event) {
+    event.preventDefault();
+    var closeId = $(event.target).attr('closeId');
+    console.log($('#' + closeId));
+    modalHide(closeId);
+    // $('#resTable').html('show');
+});
+
+function modalShow(element) {
+  $('#' + element).show();
+};
+
+function modalHide(element) {
+  $('#' + element).hide();
+}
 </script>
+</body>
+
+</html>
+
+
+
