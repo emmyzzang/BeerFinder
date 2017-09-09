@@ -104,6 +104,17 @@ router.get('/myList', function(req, res) {
   });
 });
 
+// deleting the beer from the result object but not the
+router.delete("/posts/:id", function(req, res) {
+  db.rating.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(listResult) {
+    res.json(listResult);
+  })
+})
+
 
 module.exports = router;
 
