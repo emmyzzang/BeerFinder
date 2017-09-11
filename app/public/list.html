@@ -108,7 +108,10 @@ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous"></script>
 
 <script>
-$(document).ready(function() {
+
+// It is best practice to not define an object in a document.ready
+
+
   // Not dependent on a click, because user list loads on pageload
   // Do not need to worry about dynamic loading because as a user, solely populating list
   function getBeers() {
@@ -117,8 +120,15 @@ $(document).ready(function() {
     // And we are only retreiving info from this /myList route (which is where the logic that does db call sits)
     function(res){
       console.log(res);
+
+      var selectedRating = ['','','','','',''] // Although the 0th rating will never be possible, just account for it
+      selectedRating[res[0].user_rating] = 'selected'; // Empty string array that eventually inserts the word 'selected'
+                                                      // depending on what the user_rating is
+
       // Iterate thru result of the .get call /myList -- the object from the db
       // Populate the UI
+      // Also create a dropdown for the ratings to be able to select default value of dropdown
+      // and allow user to update rating
       $('#beers-table').html(
             '<tr><td class="beerName">' + res[0].beers[0].name + '</td>' +
             '<td>' + res[0].beers[0].type + '</td>' +
@@ -127,11 +137,29 @@ $(document).ready(function() {
             '<td>' + res[0].beers[0].ibu + '</td>' +
             '<td>' + res[0].beers[0].bubbleSize + '</td>' +
             '<td>' + res[0].beers[0].head + '</td>' +
-            '<td>' + res[0].user_rating + '</td>' +
-            '<td><i data-beer-id="' + res[0].id + '" class="fa fa-times-circle" aria-hidden="true"></i></td>' + 
+            '<td>' +
+                        '<select data-placeholder="" name="userRating" class="chosen-select"' +
+                          'id="userRating' + 0 + '"onchange="updateUserRating(value, \'' + res[0].id + '\');">' +
+                          '<option value=""></option>' +
+                          '<option value="1"' + selectedRating[1] + '>1 (Ick!)</option>' +
+                          '<option value="2"' + selectedRating[2] + '>2</option>' +
+                          '<option value="3"' + selectedRating[3] + '>3</option>' +
+                          '<option value="4"' + selectedRating[4] + '>4</option>' +
+                          '<option value="5"' + selectedRating[5] + '>5 (Wow!)</option>' +
+                        '</select>' +
+            '</td>' +
+            '<td><i data-beer-id="' + res[0].id + '" class="fa fa-times-circle" aria-hidden="true"></i></td>' +
             '</tr>');
 
+
+
       for (var i = 1; i < res.length; i++) {
+
+        // Needs to be in for loop because it needs to be used after 'i' is defined
+        selectedRating = ['','','','','',''] // Although the 0th rating will never be possible, just account for it
+        selectedRating[res[i].user_rating] = 'selected'; // Empty string array that eventually inserts the word 'selected'
+                                                              // depending on what the user_rating is
+
           if(res[i].beers.length != 0){
             $('#beers-table').append(
             '<tr><td class="beerName">' + res[i].beers[0].name + '</td>' +
@@ -141,8 +169,17 @@ $(document).ready(function() {
             '<td>' + res[i].beers[0].ibu + '</td>' +
             '<td>' + res[i].beers[0].bubbleSize + '</td>' +
             '<td>' + res[i].beers[0].head + '</td>' +
-            '<td>' + res[i].user_rating + '</td>' +
-            '<td><i data-beer-id="' + res[i].id + '" class="fa fa-times-circle" aria-hidden="true"></i></td>' + 
+            '<td>' +
+                        '<select data-placeholder="" name="userRating" class="chosen-select"' +
+                          'id="userRating' + i + '"onchange="updateUserRating(value, \'' + res[i].id + '\');">' +
+                          '<option value=""></option>' +
+                          '<option value="1"' + selectedRating[1] + '>1 (Ick!)</option>' +
+                          '<option value="2"' + selectedRating[2] + '>2</option>' +
+                          '<option value="3"' + selectedRating[3] + '>3</option>' +
+                          '<option value="4"' + selectedRating[4] + '>4</option>' +
+                          '<option value="5"' + selectedRating[5] + '>5 (Wow!)</option>' +
+                        '</select>' +
+            '</td>' +            '<td><i data-beer-id="' + res[i].id + '" class="fa fa-times-circle" aria-hidden="true"></i></td>' +
             '</tr>');
           }
         }
@@ -163,8 +200,19 @@ $(document).ready(function() {
     .done(function() {
       getBeers();
     });
-  } 
+  }
 
+  function updateUserRating(newRating, ratingId) {
+    $.ajax({
+      method: "PUT",
+      url: "/posts/" + ratingId + "/" + newRating
+    })
+    .done(function() {
+      getBeers();
+    });
+  };
+
+  $(document).ready(function() {
   getBeers();
 
 });

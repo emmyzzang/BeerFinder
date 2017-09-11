@@ -106,15 +106,32 @@ router.get('/myList', function(req, res) {
 
 // deleting the beer from the result object but not the
 router.delete("/posts/:id", function(req, res) {
-  db.rating.destroy({
+
+  db.beer.destroy({
     where: {
-      id: req.params.id
+      ratingId: req.params.id // Finding a beer with the rating id to delete the beer
     }
-  }).then(function(listResult) {
-    res.json(listResult);
+  }).then(function(beerResult) {
+    db.rating.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(ratingResult) {
+      res.json(ratingResult);
+    })
   })
 })
 
+router.put("/posts/:ratingId/:newRating", function(req, res) {
+  db.rating.update({
+    user_rating: req.params.newRating
+  }, {
+    where: {
+      id: req.params.ratingId
+    }}).then(function(rating) {
+    res.json(rating);
+  })
+})
 
 module.exports = router;
 
