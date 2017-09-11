@@ -143,7 +143,7 @@ input[name=email] {
   box-sizing: border-box;
   font-size: 14px;
 }
-.w3-panel.w3-padding-16.w3-black.w3-opacity.w3-card-2.w3-hover-opacity-off {
+.w3-panel.w3-padding-16.w3-black.w3-card-2 {
   width: 65vw;
 }
 ul {
