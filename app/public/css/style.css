@@ -186,6 +186,17 @@ input[name=email] {
   border-radius: 2px;
 }
 
+.submitBtn {
+	border: 0;
+	border-radius: 3px;
+	outline: none;
+	background-color: #ffffff;
+}
+
+.submitBtn:hover {
+	background-color: #FFD326;
+}
+
 .reviewsPanel {
 	margin-top: 700px;
 }
