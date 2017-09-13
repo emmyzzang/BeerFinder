@@ -33,7 +33,7 @@ router.get("/beers", function(req, res) {
   var search = req.query.search;
   var beerQuery = [];
   console.log(search);
-  brewdb.search.all({q: search}, function(err, data) {
+  brewdb.search.all({q: search, withBreweries: "Y"}, function(err, data) {
     // for(var i = 0; i < data.length; i++) {
     //     beerQuery.push({
     //         name: data[i].name,
@@ -104,6 +104,34 @@ router.get('/myList', function(req, res) {
   });
 });
 
+// deleting the beer from the result object but not the
+router.delete("/posts/:id", function(req, res) {
+
+  db.beer.destroy({
+    where: {
+      ratingId: req.params.id // Finding a beer with the rating id to delete the beer
+    }
+  }).then(function(beerResult) {
+    db.rating.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(ratingResult) {
+      res.json(ratingResult);
+    })
+  })
+})
+
+router.put("/posts/:ratingId/:newRating", function(req, res) {
+  db.rating.update({
+    user_rating: req.params.newRating
+  }, {
+    where: {
+      id: req.params.ratingId
+    }}).then(function(rating) {
+    res.json(rating);
+  })
+})
 
 module.exports = router;
 
