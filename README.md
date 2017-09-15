@@ -12,9 +12,9 @@ I.
 
 The full list of technologies are as follows:
 
-Axios
-Bcrypt-nodejs
-Body-parser
+* Axios
+* Bcrypt-nodejs
+* Body-parser
 BreweryDB API
 Brewerydb-node
 Browserify
