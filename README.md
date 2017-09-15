@@ -8,6 +8,8 @@ The following features are included.
 
 I.  
 
+[FIX THIS TOMORROW]
+
 
 
 The full list of technologies are as follows:
@@ -15,23 +17,23 @@ The full list of technologies are as follows:
 * Axios
 * Bcrypt-nodejs
 * Body-parser
-BreweryDB API
-Brewerydb-node
-Browserify
-Chai
-CSS3
-Dotenv
-ExpressJS
-Font Awesome
-Heroku
-HTML5
-Karma
-Mocha
-Mysql
-NodeJS
-Passport
-Sequelize
-Sinon
-Supertest
-W3 Schools
-Watchify
+* BreweryDB API
+* Brewerydb-node
+* Browserify
+* Chai
+* CSS3
+* Dotenv
+* ExpressJS
+* Font Awesome
+* Heroku
+* HTML5
+* Karma
+* Mocha
+* MySQL
+* NodeJS
+* Passport
+* Sequelize
+* Sinon
+* Supertest
+* W3 Schools
+* Watchify
