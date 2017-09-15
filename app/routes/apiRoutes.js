@@ -4,16 +4,13 @@
 // // These data sources hold arrays of information on beer data, beer add list, etc.
 // // ===============================================================================
 
-// const beerData = require("../data/_____[PLACEHOLDER]");
-// const beerAddData = require("../data/_____[PLACEHOLDER]");
-
-
 // // ===============================================================================
 // // ROUTING
+// // We do not need module.exports way because we declared express router here
+// // var router = require('express').Router();
 // // ===============================================================================
 var path = require('path');
 var axios = require('axios');
-// We do not need module.export way because we declared express router here
 var router = require('express').Router();
 var handlebars = require('handlebars');
 var BreweryDb = require('brewerydb-node');
@@ -34,17 +31,9 @@ router.get("/beers", function(req, res) {
   var beerQuery = [];
   console.log(search);
   brewdb.search.all({q: search, withBreweries: "Y"}, function(err, data) {
-    // for(var i = 0; i < data.length; i++) {
-    //     beerQuery.push({
-    //         name: data[i].name,
-    //         description: data[i].description
-    //     });
-    // }
     console.log(data);
     console.log(err);
     res.json(data);
-
-    // res.json(beerQuery);
   });
 
 });
