@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Beer Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+  .myLink {display: none}
+  </style>
+</head>
+
+<body class="w3-light-grey">
+  <!-- NAVBAR START -->
+  <div class="w3-top">
+    <div class="w3-row catPadding w3-black">
+      <img class="bigLogoHeader" src="img/logo_crop_skinny.png">
+    </div>
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s2">
+        <a href="dashboard.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-beer fa-lg" aria-hidden="true"></i>
+          &nbsp; DASHBOARD
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="catalogue.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+          &nbsp; CATALOGUE
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="randomize.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-question fa-lg" aria-hidden="true"></i>
+          &nbsp; FEELING LUCKY
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="reviews.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-star fa-lg" aria-hidden="true"></i>
+          &nbsp; REVIEWS
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="list.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-list fa-lg" aria-hidden="true"></i>
+          &nbsp; YOUR LIST
+        </a>
+      </div>
+      <div class="w3-col s2">
+        <a href="signout.html" class="w3-button w3-block w3-black">
+          <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
+          &nbsp; SIGN-OUT
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- NAVBAR END -->
+  <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  </header>
+  <!-- <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+</header> -->
+
+<!-- FORM STARTS HERE  -->
+<div class="w3-display-middle catalogueFormPanel">
+  <div class="w3-container">
+
+    <div class="w3-panel cataloguePanel w3-padding-16 w3-black w3-card-2 w3-quarter">
+      <!-- FOR LATER USE: <form id="dashboard" name="dashboard" method="post" action="/signup"> -->
+      <form id="catalogue" name="catalogue">
+
+        <!-- Take Info from this form and move to user's personal profile list
+        Can use the user's input as a req.params -->
+        <!--      <h3><label for="name">Beer Name</label><h3>
+        <input class="text" name="name" type="text" /> -->
+        <h3><label for="type">What Type?</label></h3>
+        <!-- <input class="text"name="type" type="text" placeholder="IPA"/> -->
+        <!-- <select data-placeholder="" class="chosen-select" id="userRating"> -->
+        <select data-placeholder="IPA" id="type" class="w3-col s12" style="height: 50px">
+          <option value=""></option>
+          <option value="Ale">Ale</option>
+          <option value="American">American</option>
+          <option value="Belgian">Belgian</option>
+          <option value="Black">Black</option>
+          <option value="Brown">Brown</option>
+          <option value="Bock">Bock</option>
+          <option value="Chocolate">Chocolate</option>
+          <option value="Coffee">Coffee</option>
+          <option value="Fruit">Fruit</option>
+          <option value="Honey">Honey</option>
+          <option value="IPA">IPA</option>
+          <option value="Lager">Lager</option>
+          <option value="Organic">Organic</option>
+          <option value="Pilsner">Pilsner</option>
+          <option value="Porter">Porter</option>
+          <option value="Pumpkin">Pumpkin</option>
+          <option value="Scottish">Scottish</option>
+          <option value="Sour">Sour</option>
+          <option value="Spice">Spice</option>
+          <option value="Stout">Stout</option>
+        </select>
+        <!--           <h3><label for "clarity">Clarity?</label></h3>
+        <input class="text" name="clarity" type="text" placeholder="Foggy"/>
+        <h3><label for "Hue">Hue?</label></h3>
+        <input class="text" name="hue" type="text" placeholder="Golden"/>
+        <h3><label for "Bitterness Units">International Bitterness Units?</label></h3>
+        <input class="text" name="ibu" type="text" placeholder="60"/>
+        <h3><label for "Bubble Size">Bubble Size?</label></h3>
+        <input class="text" name="bubble size" type="text" placeholder="Large"/>
+        <h3><label for "Head">Head?</label></h3>
+        <input class="text" name="head" type="text" placeholder="Firm Head"/> -->
+        &nbsp;
+        <input class="submitBtn btn w3-round w3-block" style="height: 50px" type="submit" value="Submit!" />
+
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+
+$('.btn').click(function(e){
+  e.preventDefault();
+
+  console.log('THIS WORKS!!!!');
+
+  $.get('/beers',
+  {
+    search: $('[id="type"]').val()
+  },
+  function(res){
+    console.log(res);
+    $('#catalogue').replaceWith('<table id="resTable"><th class="beerListHead">Try One!</th></table>');
+    $('.cataloguePanel').addClass("beerListPanel");
+    $('.w3-display-middle').addClass('catalogueContainer')
+    for (var i = 0; i < res.length; i++) {
+
+      if(res[i].description != undefined & res[i].type === 'beer') {
+        $('#resTable').append('<tr><td class="beerName"><button class="beerChoice" beerId="' + res[i].id + '" type="submit">' + res[i].breweries[0].name + ': ' + res[i].name + '</button></td><tr>');
+        $('body').append('<div class ="w3-modal" id="' + res[i].id + '"><div class="w3-modal-content w3-animate-top w3-card-4"><h2>' + res[i].name + '</h2><h3 id="modalBeerName' + res[i].id + '">' + res[i].breweries[0].name + '</h3><p>' + res[i].description + '</p><span closeId="' + res[i].id + '" class="w3-button w3-display-topright">&times;</span></div></div>');
+        if(res[i].breweries[0].images != undefined) {
+          $('#modalBeerName' + res[i].id).after('<img class="breweryImg" src="' + res[i].breweries[0].images.squareLarge + '">')
+        }
+
+
+        // var tr = $('<tr>');
+        // var td = $('<td>');
+        // var td2 = $('<td>');
+        // td.text(res[i].name);
+        // td2.text(res[i].description);
+        // tr.append(td);
+        // tr.append(td2);
+        // $('tbody').append(tr);
+      }
+    }
+  });
+});
+
+// On click event to display some type of beer info
+$(document).on('click', '.beerChoice', function(event) {
+    event.preventDefault();
+    var modalId = $(event.target).attr('beerId');
+    console.log("hello we would like more beer info on this specific beer");
+    console.log($('#' + modalId));
+    modalShow(modalId);
+    // $('#resTable').html('show');
+});
+
+$(document).on('click', '.w3-display-topright', function(event) {
+    event.preventDefault();
+    var closeId = $(event.target).attr('closeId');
+    console.log($('#' + closeId));
+    modalHide(closeId);
+    // $('#resTable').html('show');
+});
+
+function modalShow(element) {
+  $('#' + element).show();
+};
+
+function modalHide(element) {
+  $('#' + element).hide();
+};
+</script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/randomize.css" type="text/css" />
+        <script type="text/javascript" src="randomize.js"></script>
+        <script src="js/TweenMax.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+      <div class="w3-top">
+        <div class="w3-row catPadding w3-black">
+          <img class="bigLogoHeader logoHeadRando" src="img/logo_crop_skinny.png" style="max-width:100%">
+        </div>
+        <div class="w3-row w3-padding w3-black">
+          <div class="w3-col s2">
+            <a href="dashboard.html" class="w3-button w3-block w3-black">
+              <i class="fa fa-beer fa-lg" aria-hidden="true"></i>
+              &nbsp; DASHBOARD <a href="dashboard.html"></a>
+            </a>
+          </div>
+          <div class="w3-col s2">
+            <a href="catalogue.html" class="w3-button w3-block w3-black">
+              <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+              &nbsp; CATALOGUE
+            </a>
+          </div>
+          <div class="w3-col s2">
+            <a href="randomize.html" class="w3-button w3-block w3-black">
+              <i class="fa fa-question fa-lg" aria-hidden="true"></i>
+              &nbsp; FEELING LUCKY
+            </a>
+          </div>
+          <div class="w3-col s2">
+            <a href="reviews.html" class="w3-button w3-block w3-black">
+              <i class="fa fa-star fa-lg" aria-hidden="true"></i>
+              &nbsp; REVIEWS
+            </a>
+          </div>
+          <div class="w3-col s2">
+            <a href="list.html" class="w3-button w3-block w3-black">
+              <i class="fa fa-list fa-lg" aria-hidden="true"></i>
+              &nbsp; YOUR LIST
+            </a>
+          </div>
+          <div class="w3-col s2">
+            <a href="signout.html" class="w3-button w3-block w3-black">
+              <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
+              &nbsp; SIGN-OUT
+            </a>
+          </div>
+        </div>
+      </div>
+        <div align="center">
+            <table style="margin-top:77px; margin-left: 200px; margin-right: 97px" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td>
+                    <div class="power_controls">
+                        <img id="spin_button" src="css/spin_on.png" alt="Spin" onClick="startSpin();" />
+                        <img id="reload" src="css/reload.png" style="width:70%; height:30%;" onClick="resetWheel();">
+                    </div>
+                </td>
+                <td width="100%" height="100%" class="the_wheel" align="center" valign="center">
+                    <canvas id="canvas" width="820" height="620">
+                        <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                    </canvas>
+                </td>
+            </tr>
+        </table>
+        <script>
+            var theWheel = new Winwheel({
+                'numSegments'       : 8,
+                'outerRadius'       : 200,
+                'drawText'          : true,
+                'textFontSize'      : 16,
+                'textOrientation'   : 'curved',
+                'textAlignment'     : 'inner',
+                'textMargin'        : 90,
+                'textFontFamily'    : 'monospace',
+                'textStrokeStyle'   : 'black',
+                'textLineWidth'     : 3,
+                'textFillStyle'     : 'white',
+                'drawMode'          : 'segmentImage',
+                'segments'          :
+                [
+                   {'image' : 'css/ale.png',  'text' : 'Ale'},
+                   {'image' : 'css/stout.png', 'text' : 'Stout'},
+                   {'image' : 'css/porter.png',  'text' : 'Porter'},
+                   {'image' : 'css/scottish.png',  'text' : 'Scottish'},
+                   {'image' : 'css/lager.png', 'text' : 'Lager'},
+                   {'image' : 'css/sour.png', 'text' : 'Sour'},
+                   {'image' : 'css/black.png',  'text' : 'Black'},
+                   {'image' : 'css/pilsner.png', 'text' : 'Pilsner'}
+                ],
+                'animation' :
+                {
+                    'type'     : 'spinToStop',
+                    'duration' : 5,
+                    'spins'    : 8,
+                    'callbackFinished' : 'alertPrize()'
+                }
+            });
+            var wheelPower    = 0;
+            var wheelSpinning = false;
+
+            function startSpin()
+            {
+                if (wheelSpinning == false)
+                {
+                    if (wheelPower == 1)
+                    {
+                        theWheel.animation.spins = 3;
+                    }
+                    document.getElementById('spin_button').src = "css/spin_off.png";
+                    document.getElementById('spin_button').className = "";
+                    theWheel.startAnimation();
+                    wheelSpinning = true;
+                }
+            }
+
+            function alertPrize()
+            {
+                var winningSegment = theWheel.getIndicatedSegment();
+                alert('Drink A ' + winningSegment.text + ' Tonight!');
+            }
+            function resetWheel()
+              {
+                  theWheel.stopAnimation(false);
+                  theWheel.rotationAngle = 0;
+                  theWheel.draw();
+                  document.getElementById('spin_button').src = "css/spin_on.png";
+                  document.getElementById('spin_button').className = "";
+                  wheelSpinning = false;
+              }
+        </script>
+    </body>
+</html>
