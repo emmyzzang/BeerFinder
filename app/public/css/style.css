@@ -496,6 +496,22 @@ a {
     animation: hh 0.1s;
 }
 
+.signOutContainer {
+	top: 33%;
+}
+
+.signUpContainer {
+	top: 10%;
+	left: 18%;
+	transform: none;	
+}
+
+.signInContainer {
+	top: 18%;
+	left: 18%;
+	transform: none;
+}
+
 .catalogueContainer {
 	top: -87%;
 	left: 16%;
