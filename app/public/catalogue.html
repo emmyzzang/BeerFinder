@@ -145,7 +145,7 @@ $('.btn').click(function(e){
   },
   function(res){
     console.log(res);
-    $('#catalogue').replaceWith('<table id="resTable"><th class="beerListHead">Beer!</th></table>');
+    $('#catalogue').replaceWith('<table id="resTable"><th class="beerListHead">Try One!</th></table>');
     $('.cataloguePanel').addClass("beerListPanel");
     $('.w3-display-middle').addClass('catalogueContainer')
     for (var i = 0; i < res.length; i++) {

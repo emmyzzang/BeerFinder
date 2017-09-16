@@ -509,21 +509,25 @@ a {
 }
 
 .signUpContainer {
-	top: 3%;
+	top: 5%;
 	left: 18%;
 	transform: none;	
 }
 
 .signInContainer {
-	top: 18%;
+	top: 12%;
 	left: 18%;
 	transform: none;
 }
 
 .catalogueContainer {
-	top: -87%;
+	top: -76%;
 	left: 16%;
 	transform: none;
+}
+
+.beerListHead {
+	font-size: 20pt;
 }
 
 .reviewsContainer {
@@ -547,6 +551,10 @@ a {
 
 .catPadding {
 	padding: 0px;
+}
+
+.beerListHead {
+	padding-bottom: 10px;
 }
 
 /*.navButton {
