@@ -520,12 +520,6 @@ a {
 	transform: none;
 }
 
-.catalogueContainer {
-	top: -76%;
-	left: 16%;
-	transform: none;
-}
-
 .beerListHead {
 	font-size: 20pt;
 }
@@ -541,6 +535,12 @@ a {
 
 .catalogueFormPanel {
 	top: 42%;
+}
+
+.catalogueContainer {
+	top: -76%;
+	left: 16%;
+	transform: none;
 }
 
 .signOut {
