@@ -21,6 +21,14 @@ button {
 	outline: none;
 }
 
+div.power_controls {
+    margin-right: -85px;
+}
+
+.logoHeadRando {
+	width: 100%;
+}
+
 .btn {
   padding: 2px;
   margin: 1px 0;
@@ -501,7 +509,7 @@ a {
 }
 
 .signUpContainer {
-	top: 10%;
+	top: 3%;
 	left: 18%;
 	transform: none;	
 }
@@ -517,3 +525,30 @@ a {
 	left: 16%;
 	transform: none;
 }
+
+.reviewsContainer {
+	top: 60.5%;
+}
+
+.bigLogo {
+	margin-bottom: -30px;
+	width: 65vw;
+}
+
+.signOut {
+	text-align: center;
+}
+
+.bigLogoHeader {
+    margin-bottom: -8px;
+    margin-top: 2px;
+    width: 100%;
+}
+
+.catPadding {
+	padding: 0px;
+}
+
+/*.navButton {
+	padding-top: 0px;
+}*/
