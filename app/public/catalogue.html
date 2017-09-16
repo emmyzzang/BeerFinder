@@ -20,6 +20,9 @@
 <body class="w3-light-grey">
   <!-- NAVBAR START -->
   <div class="w3-top">
+    <div class="w3-row catPadding w3-black">
+      <img class="bigLogoHeader" src="img/logo_crop_skinny.png">
+    </div>
     <div class="w3-row w3-padding w3-black">
       <div class="w3-col s2">
         <a href="dashboard.html" class="w3-button w3-block w3-black">
@@ -66,7 +69,7 @@
 </header> -->
 
 <!-- FORM STARTS HERE  -->
-<div class="w3-display-middle">
+<div class="w3-display-middle catalogueFormPanel">
   <div class="w3-container">
 
     <div class="w3-panel cataloguePanel w3-padding-16 w3-black w3-card-2 w3-quarter">
@@ -121,36 +124,6 @@
     </div>
   </div>
 
-  <div class="w3-container">
-
-    <div class="w3-panel w3-padding-16 w3-black w3-card-2">
-      <div class="w3-container">
-        <p class="w3-large"><b>Past Beers!</b></p>
-      </div>
-      <div class="container"></div>
-      <div class="panel-body">
-        <table class="table table-hover" style="width:100%" id='beers-table'>
-          <thead>
-            <tr>
-              <th>Beer Names</th>
-              <th>Type</th>
-              <th>Clarity</th>
-              <th>Hue</th>
-              <th>Bitterness Units</th>
-              <th>Bubble Size</th>
-              <th>Head</th>
-              <th>Your Rating</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <br>
-  </div>
-</div>
-
 
 
 
@@ -172,8 +145,9 @@ $('.btn').click(function(e){
   },
   function(res){
     console.log(res);
-    $('#catalogue').replaceWith('<table id="resTable"><th class="beerListHead">Beer!</th></table>');
+    $('#catalogue').replaceWith('<table id="resTable"><th class="beerListHead">Try One!</th></table>');
     $('.cataloguePanel').addClass("beerListPanel");
+    $('.w3-display-middle').addClass('catalogueContainer')
     for (var i = 0; i < res.length; i++) {
 
       if(res[i].description != undefined & res[i].type === 'beer') {

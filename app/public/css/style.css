@@ -21,6 +21,14 @@ button {
 	outline: none;
 }
 
+div.power_controls {
+    margin-right: -85px;
+}
+
+.logoHeadRando {
+	width: 100%;
+}
+
 .btn {
   padding: 2px;
   margin: 1px 0;
@@ -495,3 +503,69 @@ a {
   -webkit-animation: hh 0.1s; /* Chrome, Safari, Opera */
     animation: hh 0.1s;
 }
+
+.signOutContainer {
+	top: 33%;
+}
+
+.signUpContainer {
+	top: 5%;
+	left: 18%;
+	transform: none;	
+}
+
+.signInContainer {
+	top: 12%;
+	left: 18%;
+	transform: none;
+}
+
+.beerListHead {
+	font-size: 20pt;
+}
+
+.reviewsContainer {
+	top: 60.5%;
+}
+
+.bigLogo {
+	margin-bottom: -30px;
+	width: 65vw;
+}
+
+.catalogueFormPanel {
+	top: 42%;
+}
+
+.catalogueContainer {
+	top: -76%;
+	left: 16%;
+	transform: none;
+}
+
+.signOut {
+	text-align: center;
+}
+
+.bigLogoHeader {
+    margin-bottom: -8px;
+    margin-top: 2px;
+    width: 100%;
+}
+
+.catPadding {
+	padding: 0px;
+}
+
+.beerListHead {
+	padding-bottom: 10px;
+}
+
+.listHead {
+	font-size: 20pt;
+	padding-bottom: 10px;
+}
+
+/*.navButton {
+	padding-top: 0px;
+}*/
