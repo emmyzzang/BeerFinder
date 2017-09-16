@@ -121,36 +121,6 @@
     </div>
   </div>
 
-  <div class="w3-container">
-
-    <div class="w3-panel w3-padding-16 w3-black w3-card-2">
-      <div class="w3-container">
-        <p class="w3-large"><b>Past Beers!</b></p>
-      </div>
-      <div class="container"></div>
-      <div class="panel-body">
-        <table class="table table-hover" style="width:100%" id='beers-table'>
-          <thead>
-            <tr>
-              <th>Beer Names</th>
-              <th>Type</th>
-              <th>Clarity</th>
-              <th>Hue</th>
-              <th>Bitterness Units</th>
-              <th>Bubble Size</th>
-              <th>Head</th>
-              <th>Your Rating</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <br>
-  </div>
-</div>
-
 
 
 
@@ -174,6 +144,7 @@ $('.btn').click(function(e){
     console.log(res);
     $('#catalogue').replaceWith('<table id="resTable"><th class="beerListHead">Beer!</th></table>');
     $('.cataloguePanel').addClass("beerListPanel");
+    $('.w3-display-middle').addClass('catalogueContainer')
     for (var i = 0; i < res.length; i++) {
 
       if(res[i].description != undefined & res[i].type === 'beer') {

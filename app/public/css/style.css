@@ -495,3 +495,9 @@ a {
   -webkit-animation: hh 0.1s; /* Chrome, Safari, Opera */
     animation: hh 0.1s;
 }
+
+.catalogueContainer {
+	top: -87%;
+	left: 16%;
+	transform: none;
+}
