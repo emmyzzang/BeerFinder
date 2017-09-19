@@ -35,7 +35,7 @@ On the click of the button, another call is made to the db, with the search para
 
 II. FEELING LUCKY
 
-On pageload, a colorful wheel appears with a different popular beer type in each of the 8 different fractions of the wheel. On the left side of the wheel, a button allows the user to hit "SPIN" for the wheel. 
+On pageload, a colorful wheel appears with a different popular beer types in each of the 8 different fractions of the wheel. On the left side of the wheel, a button allows the user to hit "SPIN" for the wheel. 
 
 ![](misc_extras/bf8.png)
 
