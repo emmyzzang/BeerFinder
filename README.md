@@ -2,6 +2,8 @@
 
 Beer Explorer is a beer finder application utilizing NodeJS, an Express Web Server & Router, Sequelize ORM, MySQL, and deployed using Heroku. The app is wrapped in a secure user authentication provided by the NodeJS packages, BCrypt and Passport.
 
+![](misc_extras/bf1.png)
+
 This app allows users to search for beer in both a catalogue and a randomized wheel. Users can also create reviews on beer, as well as reference, revise, and delete previous beer ratings.
 
 The following features are included.
