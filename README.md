@@ -33,7 +33,7 @@ Beer Explorer is wrapped -- from every REST endpoint in the UI to the DB -- in a
 
 ![](misc_extras/bf1.png)
 
- User is prompted to sign up if they cannot sign-in. 
+User is prompted to sign up if they cannot sign-in. 
 
 ![](misc_extras/bf2.png)
 
@@ -110,4 +110,8 @@ User may select to sign out.
 
 ![](misc_extras/bf14.png)
 
+
+I tested the authentication of this app using the Karma/Mocha/Chai suite. 
+
+![](misc_extras/unit_test_expected_and_actual_users_are_equal.png)
 
