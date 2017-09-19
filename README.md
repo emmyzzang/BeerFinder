@@ -110,7 +110,7 @@ User may select to sign out.
 
 ![](misc_extras/bf14.png)
 
-======================================================================================
+=====================================================================================
 
 I tested the authentication of this app using Karma/Mocha/Chai. 
 
