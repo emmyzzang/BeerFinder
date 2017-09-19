@@ -8,7 +8,7 @@ Beer Explorer is wrapped -- from every REST endpoint in the UI to the DB -- in a
 
 ![](misc_extras/bf2.png)
 
-As the dashboard demonstrates, Beer Explorer allows users to search for beer in both a catalogue and a randomized wheel. Users can also create reviews on beer, as well as reference, revise, and delete previous beer ratings.
+As the dashboard demonstrates, Beer Explorer allows user to search for beer in both a catalogue and a randomized wheel. User can also create reviews on beer, as well as reference, revise, and delete previous beer ratings.
 
 ![](misc_extras/bf3.png)
 
@@ -45,7 +45,7 @@ The user is forced to fill out all the parameter fields. On submit, both the bee
 
 IV. LIST
 
-On pageload, the List has the full CRUD capabilities for users to: Create, Read, Update, and Delete their own beer ratings. This list is permanently stored to the mysql db for each individual user until the user decides to do a CRUD action to the data.
+On pageload, the List has the full CRUD capabilities for user to: Create, Read, Update, and Delete their own beer ratings. This list is permanently stored to the mysql db for each individual user until the user decides to do a CRUD action to the data.
 
 
 The full list of technologies are as follows:
