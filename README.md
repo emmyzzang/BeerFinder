@@ -28,8 +28,9 @@ After receiving response from the BreweryDB API, the user sees an appended list 
 
 ![](misc_extras/bf6.png)
 
-On the click of the button, another call is made to the db, with the search parameter being that unique ID. The response is shown in a modal, as the user sees an image for the brewery that makes the beer as well as a description of the beer. 
+On the click of the button, another call is made to the db, with the search parameter being that unique ID. The response is shown in a modal, and the user sees an image for the brewery that makes the beer, as well as a description of the beer. 
 
+![](misc_extras/bf7.png)
 
 
 II. FEELING LUCKY
