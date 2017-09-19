@@ -35,7 +35,12 @@ On the click of the button, another call is made to the db, with the search para
 
 II. FEELING LUCKY
 
-On pageload, a colorful wheel appears with a different popular beer type in each of the 8 different fractions of the wheel. On the left side of the wheel, a button allows the user to hit "SPIN" for the wheel. Once the wheel stops, there is an alert that suggests a beer type for a user to input into the catalogue.
+On pageload, a colorful wheel appears with a different popular beer type in each of the 8 different fractions of the wheel. On the left side of the wheel, a button allows the user to hit "SPIN" for the wheel. 
+
+
+
+Once the wheel stops, there is an alert that suggests a beer type for a user to input into the catalogue.
+
 
 
 III. REVIEWS
