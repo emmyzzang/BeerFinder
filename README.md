@@ -8,7 +8,9 @@ Beer Explorer is wrapped -- from every REST endpoint in the UI to the DB -- in a
 
 ![](misc_extras/bf2.png)
 
-This app allows users to search for beer in both a catalogue and a randomized wheel. Users can also create reviews on beer, as well as reference, revise, and delete previous beer ratings.
+As the dashboard demonstrates, Beer Explorer allows users to search for beer in both a catalogue and a randomized wheel. Users can also create reviews on beer, as well as reference, revise, and delete previous beer ratings.
+
+![](misc_extras/bf3.png)
 
 The following features are included.
 
