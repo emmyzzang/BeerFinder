@@ -111,7 +111,7 @@ User may select to sign out.
 ![](misc_extras/bf14.png)
 
 
-I tested the authentication of this app using the Karma/Mocha/Chai suite. 
+I tested the authentication of this app using Karma/Mocha/Chai. 
 
 ![](misc_extras/unit_test_expected_and_actual_users_are_equal.png)
 
