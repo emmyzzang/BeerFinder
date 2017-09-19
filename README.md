@@ -29,12 +29,11 @@ The full list of technologies are as follows:
 * Watchify
 
 
-
-USER LOGIN
+Beer Explorer is wrapped -- from every REST endpoint in the UI to the DB -- in a secure user authentication provided by the NodeJS packages, BCrypt and Passport.
 
 ![](misc_extras/bf1.png)
 
-Beer Explorer is wrapped -- from every REST endpoint in the UI to the DB -- in a secure user authentication provided by the NodeJS packages, BCrypt and Passport. User is prompted to sign up if they cannot sign-in. 
+ User is prompted to sign up if they cannot sign-in. 
 
 ![](misc_extras/bf2.png)
 
