@@ -106,7 +106,6 @@ This list is permanently stored to the mysql db for each individual user until t
 
 ![](misc_extras/bf13.png)
 
-
 User may select to sign out.
 
 ![](misc_extras/bf14.png)
