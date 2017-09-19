@@ -69,7 +69,18 @@ The user is forced to fill out all the parameter fields. On submit, both the bee
 
 IV. LIST
 
-On pageload, the List has the full CRUD capabilities for user to: Create, Read, Update, and Delete their own beer ratings. This list is permanently stored to the mysql db for each individual user until the user decides to do a CRUD action to the data.
+On pageload, the List has the full CRUD capabilities for user to: Create, Read, Update, and Delete their own beer ratings.
+
+![](misc_extras/bf12.png)
+
+This list is permanently stored to the mysql db for each individual user until the user decides to do a CRUD action to the data.
+
+![](misc_extras/bf13.png)
+
+
+User may select to logout.
+
+![](misc_extras/bf14.png)
 
 
 The full list of technologies are as follows:
