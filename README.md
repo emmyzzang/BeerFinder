@@ -2,6 +2,35 @@
 
 Beer Explorer is a beer finder application utilizing NodeJS, an Express Web Server & Router, Sequelize ORM, MySQL, and deployed using Heroku. 
 
+The full list of technologies are as follows:
+
+* Axios
+* Bcrypt-nodejs
+* Body-parser
+* BreweryDB API
+* Brewerydb-node
+* Browserify
+* Chai
+* CSS3
+* Dotenv
+* ExpressJS
+* Font Awesome
+* Heroku
+* HTML5
+* Karma
+* Mocha
+* MySQL
+* NodeJS
+* Passport
+* Sequelize
+* Sinon
+* Supertest
+* W3 Schools
+* Watchify
+
+
+USER LOGIN
+
 ![](misc_extras/bf1.png)
 
 Beer Explorer is wrapped -- from every REST endpoint in the UI to the DB -- in a secure user authentication provided by the NodeJS packages, BCrypt and Passport. User is prompted to sign up if they cannot sign-in. 
@@ -83,28 +112,3 @@ User may select to logout.
 ![](misc_extras/bf14.png)
 
 
-The full list of technologies are as follows:
-
-* Axios
-* Bcrypt-nodejs
-* Body-parser
-* BreweryDB API
-* Brewerydb-node
-* Browserify
-* Chai
-* CSS3
-* Dotenv
-* ExpressJS
-* Font Awesome
-* Heroku
-* HTML5
-* Karma
-* Mocha
-* MySQL
-* NodeJS
-* Passport
-* Sequelize
-* Sinon
-* Supertest
-* W3 Schools
-* Watchify
