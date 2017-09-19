@@ -60,6 +60,8 @@ On pageload, a form appears asking the user to input 7 different parameters:
 
 The 8th parameter is the user_rating.
 
+![](misc_extras/bf11.png)
+
 Both of these parameter groups write into the same database, beer_db, however, they write to separate parts of the db. Params 1-7 write to the Beers table whereas the user_rating writes to the Ratings table.
 
 The user is forced to fill out all the parameter fields. On submit, both the beer info and the user rating populate to the List page, and are stored in the MySQL join table, Ratings.
