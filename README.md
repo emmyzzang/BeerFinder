@@ -16,12 +16,31 @@ The following features are included.
 
 I.  CATALOGUE
 
-On pageload, a dropdown list appears and forces user input. The user selects from a list of popular beer types and submits their selection. After receiving response from the BreweryDB API, the user sees an appended list of buttons with brewery name and beer name on them. Each button is given a unique ID that corresponds with its ID in the BreweryDB API. On the click of the button, another call is made to the db, with the search parameter being that unique ID. The response is shown in a modal, as the user sees an image for the brewery that makes the beer as well as a description of the beer.  
+On pageload, a dropdown list appears and forces user input. 
+
+![](misc_extras/bf4.png)
+
+The user selects from a list of popular beer types and submits their selection. 
+
+![](misc_extras/bf5.png)
+
+After receiving response from the BreweryDB API, the user sees an appended list of buttons with brewery name and beer name on them. Each button is given a unique ID that corresponds with its ID in the BreweryDB API. 
+
+![](misc_extras/bf6.png)
+
+On the click of the button, another call is made to the db, with the search parameter being that unique ID. The response is shown in a modal, and the user sees an image for the brewery that makes the beer, as well as a description of the beer. 
+
+![](misc_extras/bf7.png)
 
 
 II. FEELING LUCKY
 
-On pageload, a colorful wheel appears with a different popular beer type in each of the 8 different fractions of the wheel. On the left side of the wheel, a button allows the user to hit "SPIN" for the wheel. Once the wheel stops, there is an alert that suggests a beer type for a user to input into the catalogue.
+On pageload, a colorful wheel appears with a different popular beer type in each of the 8 different fractions of the wheel. On the left side of the wheel, a button allows the user to hit "SPIN" for the wheel. 
+
+
+
+Once the wheel stops, there is an alert that suggests a beer type for a user to input into the catalogue.
+
 
 
 III. REVIEWS
