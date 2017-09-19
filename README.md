@@ -16,8 +16,13 @@ The following features are included.
 
 I.  CATALOGUE
 
-On pageload, a dropdown list appears and forces user input. The user selects from a list of popular beer types and submits their selection. After receiving response from the BreweryDB API, the user sees an appended list of buttons with brewery name and beer name on them. Each button is given a unique ID that corresponds with its ID in the BreweryDB API. On the click of the button, another call is made to the db, with the search parameter being that unique ID. The response is shown in a modal, as the user sees an image for the brewery that makes the beer as well as a description of the beer.  
+On pageload, a dropdown list appears and forces user input. The user selects from a list of popular beer types and submits their selection. After receiving response from the BreweryDB API, the user sees an appended list of buttons with brewery name and beer name on them. Each button is given a unique ID that corresponds with its ID in the BreweryDB API. 
 
+![](misc_extras/bf4.png)
+
+On the click of the button, another call is made to the db, with the search parameter being that unique ID. The response is shown in a modal, as the user sees an image for the brewery that makes the beer as well as a description of the beer. 
+
+![](misc_extras/bf5.png)
 
 II. FEELING LUCKY
 
