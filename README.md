@@ -110,8 +110,17 @@ User may select to sign out.
 
 ![](misc_extras/bf14.png)
 
+========================================================================================================================
 
 I tested the authentication of this app using Karma/Mocha/Chai. 
 
 ![](misc_extras/unit_test_expected_and_actual_users_are_equal.png)
+
+I also structured the auth from a circular dependency towards a linear one by creating a usercontroller. 
+
+![](misc_extras/Image uploaded from iOS.jpg)
+
+The database design is very efficient, however, there is always room for improvement. 
+
+![](misc_extras/Image uploaded from iOS (1).jpg)
 
