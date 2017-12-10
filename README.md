@@ -1,6 +1,6 @@
-# BeerExplorer
+# Beer Explorer
 
-Beer Explorer is a beer finder application utilizing NodeJS, an Express Web Server & Router, Sequelize ORM, MySQL, and deployed using Heroku. 
+Beer Explorer is a beer finder application using NodeJS, an Express Web Server & Router, Sequelize ORM, MySQL, and deployed using Heroku. 
 
 The full list of technologies are as follows:
 
@@ -28,8 +28,11 @@ The full list of technologies are as follows:
 * W3 Schools
 * Watchify
 
+# Features
 
-Beer Explorer is wrapped -- from every REST endpoint in the UI to the DB -- in a secure user authentication provided by the NodeJS packages, BCrypt and Passport.
+The following features are included. 
+
+Built using an MVC architecture, Beer Explorer is wrapped -- from every REST endpoint in the UI to the DB -- in a secure user authentication provided by the NodeJS packages, BCrypt and Passport.
 
 ![](misc_extras/bf1.png)
 
@@ -37,11 +40,9 @@ User is prompted to sign up if they cannot sign-in.
 
 ![](misc_extras/bf2.png)
 
-As the dashboard demonstrates, Beer Explorer allows user to search for beer in both a catalogue and a randomized wheel. User can also create reviews on beer, as well as reference, revise, and delete previous beer ratings.
+As the dashboard demonstrates, Beer Explorer allows user to search for beer in both a catalogue and a wheel randomizer. User can also create reviews on beer, as well as read, update, and delete previous beer ratings.
 
 ![](misc_extras/bf3.png)
-
-The following features are included.
 
 I.  CATALOGUE
 
